@@ -1,0 +1,32 @@
+Them for a game:
+LumberJack choping wood
+
+Platform: Android
+Sterowanie: touchscreen
+Gatunek: Casual Game 20 lvl
+Tools: Unity3D, InkScape, Gimp
+
+Gra jak tradycyjny block-breaker
+Zamiast paddle jest drwal ktory rzuca siekier¹
+Zamiast cegie³ s¹ pnie drzew do roz³upania
+Ograniczenie czasowe na poziomie (+ za ka¿d¹ rozbit¹ k³odê i w powerUP)
+
+Art Style - cartoon
+Potrzebne grafiki: 
+- drwal
+- 3 ró¿ne pnie drzewa
+- siekiera, pi³a spalinowa
+- MainMenu Background
+- 5 ro¿nych grafik lasu dla lvl
+- grafika powerUP (koszyk piknikowy - ró¿ne kolory kocyka?)
+
+Features:
+PowerUp - time+, multi-axe, multi-lumberjack, chain-saw
+
+Music - happy, relaxing
+SFX - sapanie, odg³os r¹bania, fanfary na koniec level, click-sound, lose sfx, powerUP
+
+
+
+Additional info for project:
+https://www.gamasutra.com/view/feature/1630/breaking_down_breakout_system_and_.php?print=1
