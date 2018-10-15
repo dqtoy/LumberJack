@@ -20,7 +20,7 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadLoseScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void LoadWinScene()
