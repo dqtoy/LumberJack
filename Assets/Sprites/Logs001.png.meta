@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 210
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,10 +123,10 @@ TextureImporter:
       name: Logs001_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 209
-        width: 216
-        height: 93
+        x: 1
+        y: 243
+        width: 250
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,7 +134,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08b32b971d2e2d644b82255caae4108b
+      spriteID: cae186344c34c7a4e81af229e295a9f1
       vertices: []
       indices: 
       edges: []
@@ -143,10 +143,10 @@ TextureImporter:
       name: Logs001_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 103
-        width: 216
-        height: 93
+        x: 1
+        y: 120
+        width: 250
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26ec26dcbe42abd4c852bf95e8e1cbdc
+      spriteID: b75a437e40f0bc642bb7467937509a0e
       vertices: []
       indices: 
       edges: []
@@ -165,8 +165,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 215
-        height: 93
+        width: 250
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,7 +174,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed8146c50ee58f54887a29b9f9726ba5
+      spriteID: 5b976a00f0e0beb47a7dcaade53d77f4
       vertices: []
       indices: 
       edges: []
@@ -182,7 +182,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 23f2dfd7a91835844a90d22fde8efbcf
+    spriteID: 7dd0501157d2de345b2be141b1b72f20
     vertices: []
     indices: 
     edges: []
