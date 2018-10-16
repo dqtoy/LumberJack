@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 209619203}
   - component: {fileID: 209619202}
   - component: {fileID: 209619201}
+  - component: {fileID: 209619205}
   m_Layer: 0
   m_Name: Axe001
   m_TagString: Untagged
@@ -352,12 +353,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 209619200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.081, y: 1.333, z: 0}
+  m_LocalPosition: {x: 3, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209619205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 209619200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1df361f3ab86d4290e4b4f850292eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle1: {fileID: 2075618914}
 --- !u!1 &313634902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2245,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075618909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.159, y: 0.91, z: 0}
+  m_LocalPosition: {x: 3, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2294,8 +2307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7ed1551eb84d84e8e8ea4de4c6f35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 0.2
-  max: 6
+  min: 0.5
+  max: 5.75
   screenWidthInUnits: 6.25
   moveSlider: {fileID: 1512226533}
 --- !u!1 &2114076096
