@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
+    [SerializeField] AudioClip destoryBlockSound;
+    [Range(0, 1)] [SerializeField] float volumeLevel = 1f;
+
+    LevelController levelController;
+
+    private void Start()
+    {
+        levelController = FindObjectOfType<LevelController>();
+        levelController.countBreakableBlocks();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        DestroyBlock();
+    }
+
+    private void DestroyBlock()
+    {
+        levelController.destroyedBreakableBlock();
+        AudioSource.PlayClipAtPoint(destoryBlockSound, Camera.main.transform.position, volumeLevel);
         Destroy(gameObject);
     }
 }

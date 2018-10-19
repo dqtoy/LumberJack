@@ -219,11 +219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crackSound:
-  - {fileID: 8300000, guid: 5a1bbd9c2d809ea4992703f0ef69f090, type: 3}
+  - {fileID: 8300000, guid: c13ce156a1510b94a935c3858f02f1e9, type: 3}
   - {fileID: 8300000, guid: ed275836b789ea64da4b6c1425a4abe7, type: 3}
   - {fileID: 8300000, guid: 6cd827ae556b80347acda545ee7e6a0b, type: 3}
-  - {fileID: 8300000, guid: c13ce156a1510b94a935c3858f02f1e9, type: 3}
-  crackVolume: 1
+  crackVolume: 0.8
   bounceSound: {fileID: 8300000, guid: b01ef39ce23a72e4f94daaeb116fd66d, type: 3}
   bounceVolume: 0.3
 --- !u!114 &114092548649912330

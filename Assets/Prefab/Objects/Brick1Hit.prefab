@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d0fc4068f2d38448c3ff3cfcc1e11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destoryBlockSound: {fileID: 8300000, guid: 5a1bbd9c2d809ea4992703f0ef69f090, type: 3}
+  gameCamera: {fileID: 1372823075340522, guid: e8ec254b1b7250f4aad3b7554ea545f9, type: 2}
+  volumeLevel: 1
 --- !u!212 &212797081248798166
 SpriteRenderer:
   m_ObjectHideFlags: 1
