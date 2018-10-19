@@ -8,9 +8,11 @@ public class Block : MonoBehaviour {
     [Range(0, 1)] [SerializeField] float volumeLevel = 1f;
 
     LevelController levelController;
+    GameStatus gameStatus;
 
     private void Start()
     {
+        gameStatus = FindObjectOfType<GameStatus>();
         levelController = FindObjectOfType<LevelController>();
         levelController.countBreakableBlocks();
     }
@@ -18,6 +20,7 @@ public class Block : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         DestroyBlock();
+        gameStatus.AddPointsToScore();
     }
 
     private void DestroyBlock()
