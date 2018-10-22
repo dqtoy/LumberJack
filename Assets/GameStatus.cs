@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameStatus : MonoBehaviour
 {
     // configuration parameters
     [Range(0, 2)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsPerBlockDestoryed = 10;
-    TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
 
     // state variable
     [SerializeField]  int currentScore = 0;
 
+    private static GameStatus gameStatus = null;
+
     private void Awake()
     {
-        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
-        if (gameStatusCount > 1)
+        if (gameStatus == null)
+        {
+            gameStatus = this;
+        }
+        else if (gameStatus != this)
         {
             Destroy(gameObject);
         }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization
     void Start()
     {
-        scoreText = Transform.FindObjectOfType<TextMeshProUGUI>();
         UpdateScoreText();
     }
 
