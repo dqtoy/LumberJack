@@ -8,11 +8,11 @@ public class Block : MonoBehaviour {
     [Range(0, 1)] [SerializeField] float volumeLevel = 1f;
 
     LevelController levelController;
-    GameStatus gameStatus;
+    GameSession gameStatus;
 
     private void Start()
     {
-        gameStatus = FindObjectOfType<GameStatus>();
+        gameStatus = FindObjectOfType<GameSession>();
         levelController = FindObjectOfType<LevelController>();
         levelController.countBreakableBlocks();
     }

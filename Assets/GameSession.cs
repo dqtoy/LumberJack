@@ -4,8 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameSession
-    : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     // configuration parameters
     [Range(0, 2)] [SerializeField] float gameSpeed = 1f;
