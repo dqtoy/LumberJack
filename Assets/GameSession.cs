@@ -8,7 +8,7 @@ public class GameSession : MonoBehaviour
 {
     // configuration parameters
     [Range(0, 2)] [SerializeField] float gameSpeed = 1f;
-    [SerializeField] int pointsPerBlockDestoryed = 10;
+    //[SerializeField] int pointsPerBlockDestoryed = 10;
     [SerializeField] TextMeshProUGUI scoreText;
 
 
@@ -43,7 +43,7 @@ public class GameSession : MonoBehaviour
         Time.timeScale = gameSpeed;            // 1f - regular time scale
     }
 
-    public void AddPointsToScore()
+    public void AddPointsToScore(int pointsPerBlockDestoryed)
     {
         currentScore += pointsPerBlockDestoryed;
         UpdateScoreText();

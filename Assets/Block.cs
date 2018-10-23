@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,12 @@ public class Block : MonoBehaviour
     [SerializeField] float vfxLiveTime = 2f;
 
     // damage processing - block dmg, what sprite etc.
-    [SerializeField] int maxHitsForBlock = 1;
     [SerializeField] int timesHitAlready = 0; // serialized for debug
+    [SerializeField] Sprite[] hitSprites;
 
 
     // backend elements - scores, counting etc.
+    [SerializeField] int pointsPerBlockDestoryed = 10;
     LevelController levelController;
     GameSession gameStatus;
 
@@ -30,17 +32,36 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SpawnVFX();
-        timesHitAlready++;
+
         HandleHit();
 
     }
 
     private void HandleHit()
     {
+        timesHitAlready++;
+        int maxHitsForBlock = hitSprites.Length;
         if (timesHitAlready >= maxHitsForBlock)
         {
             AudioSource.PlayClipAtPoint(destoryBlockSound, Camera.main.transform.position, volumeLevel);
             DestroyBlock();
+        }
+        else
+        {
+            ShowNextHitSprite();
+        }
+    }
+
+    private void ShowNextHitSprite()
+    {
+        //int spriteIndex = timesHitAlready - 1;
+        if (hitSprites[timesHitAlready] != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = hitSprites[timesHitAlready];
+        }
+        else
+        {
+            Debug.LogError("Block sprite is missing from array!" + gameObject);
         }
     }
 
@@ -48,7 +69,7 @@ public class Block : MonoBehaviour
     {
         levelController.destroyedBreakableBlock();
         Destroy(gameObject);
-        gameStatus.AddPointsToScore();
+        gameStatus.AddPointsToScore(pointsPerBlockDestoryed);
     }
 
     private void SpawnVFX()
