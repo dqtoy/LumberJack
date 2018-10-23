@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour
 
     private void LaunchBall()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             ballRigibody.velocity = launchForce;
             hasStarted = true;

@@ -80,7 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destoryBlockSound: {fileID: 8300000, guid: 5a1bbd9c2d809ea4992703f0ef69f090, type: 3}
   volumeLevel: 1
-  blockVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
+  blockVFX: {fileID: 100000, guid: 137a956dcb425744aaee58ea989be3d3, type: 2}
+  vfxLiveTime: 2
 --- !u!212 &212797081248798166
 SpriteRenderer:
   m_ObjectHideFlags: 1
