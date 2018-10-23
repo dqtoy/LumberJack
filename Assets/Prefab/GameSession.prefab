@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 223100322027325280}
   - component: {fileID: 114975022250294204}
   - component: {fileID: 114003319649432722}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ScoreCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,8 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4044d9354d5da44c82a40d6d3cbb9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 0.8
-  pointsPerBlockDestoryed: 10
+  gameSpeed: 1
   scoreText: {fileID: 114926435339211356}
   currentScore: 0
 --- !u!114 &114926435339211356
