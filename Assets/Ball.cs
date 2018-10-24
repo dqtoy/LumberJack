@@ -15,6 +15,8 @@ public class Ball : MonoBehaviour
     Vector2 paddleToBallVector;
     bool hasStarted = false;
 
+    Vector2 tempVelocity;
+
     // Use this for initialization
     void Start()
     {
@@ -51,7 +53,18 @@ public class Ball : MonoBehaviour
    
     public void FreezBall()
     {
-        ballRigibody.isKinematic = true;
-        ballRigibody.velocity = Vector2.zero;
+        tempVelocity = ballRigibody.velocity;
+        ballRigibody.constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+
+    public void UnFreezeBall()
+    {
+        ballRigibody.constraints = RigidbodyConstraints2D.None;
+        Invoke("RestoreVelocity", 1f);
+    }
+
+    private void RestoreVelocity()
+    {
+        ballRigibody.velocity = tempVelocity;
     }
 }

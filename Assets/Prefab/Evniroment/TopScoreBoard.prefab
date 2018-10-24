@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4737382162812686}
   - component: {fileID: 212329177333891604}
-  - component: {fileID: 68975598459927604}
+  - component: {fileID: 61045214999595752}
   m_Layer: 0
   m_Name: TopScoreBoard
   m_TagString: Untagged
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &68975598459927604
-EdgeCollider2D:
+--- !u!61 &61045214999595752
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,26 +53,19 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07359624, y: 0.036798}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.4444447, y: 2.6444445}
+    newSize: {x: 8.12, y: 5.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7103047, y: 2.5708485}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.6065786, y: -0.4089632}
-  - {x: -2.5147657, y: -0.8128433}
-  - {x: -2.4215035, y: -0.986043}
-  - {x: -2.251649, y: -1.142458}
-  - {x: -1.7568276, y: -1.1605592}
-  - {x: -0.60689354, y: -1.1083517}
-  - {x: -0.14432907, y: -1.1481061}
-  - {x: 0.18400097, y: -1.334178}
-  - {x: 0.6055598, y: -1.5433316}
-  - {x: 1.1876593, y: -1.5407271}
-  - {x: 1.1617119, y: -1.2993932}
-  - {x: 1.1614928, y: -1.2760625}
-  - {x: 1.3312244, y: -1.5479946}
-  - {x: 1.8283172, y: -1.5713305}
-  - {x: 2.5485744, y: -1.6442437}
-  - {x: 2.4060383, y: -1.1271157}
-  - {x: 2.811267, y: -0.71338654}
 --- !u!212 &212329177333891604
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -108,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 806487dd8a27e1649b22d0f5baa7f37c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64d6cfaeaad5327469f2605c683796ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

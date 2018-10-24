@@ -39,4 +39,15 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    public void PauseMenu()
+    {
+        gameCanvas.GetComponent<Animator>().SetBool("isPaused", true);
+        FindObjectOfType<Ball>().FreezBall();
+    }
+    public void UnPauseMenu()
+    {
+        gameCanvas.GetComponent<Animator>().SetBool("isPaused", false);
+        FindObjectOfType<Ball>().UnFreezeBall();
+    }
+
 }

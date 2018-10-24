@@ -20,18 +20,18 @@ public class SceneLoader : MonoBehaviour {
         {
             FindObjectOfType<GameSession>().ResetGame();
         }
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("00_MainMenu");
     }
 
     public void LoadLoseScene()
     {
         FindObjectOfType<GameSession>().ResetGame();
-        SceneManager.LoadScene("03_GameOver");
+        SceneManager.LoadScene("00_GameOver");
     }
 
     public void LoadWinScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("00_GameOver");
     }
 
     public void QuitApplication()
