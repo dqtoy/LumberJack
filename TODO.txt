@@ -1,9 +1,9 @@
 
 map scene animation
 Icons
-Fix issue with persistent score
-Panel for losing
-Fix bug with axe going thrue collider
+
+Make proper graphic for panels
+
 Main menu screen with animations
 buttons in gameplay to get back to main menu, pause and options
 Scene with map
@@ -15,3 +15,8 @@ Preference System for volume, SFX, level locked
 Skoñczyæ na podstawowej wersji grê z 6 level
 
 Dobudowaæ levele
+
+done:
+Fix issue with persistent score
+Fix bug with axe going thrue collider
+Panel for losing

@@ -34,12 +34,6 @@ public class GameSession : MonoBehaviour
         Time.timeScale = gameSpeed;
     }
 
-    public void SetGameSpeed(float speed)
-    {
-        gameSpeed = speed;
-    }
-
-
     public void AddPointsToScore(int pointsPerBlockDestoryed)
     {
         currentScore += pointsPerBlockDestoryed;
