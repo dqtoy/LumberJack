@@ -779,7 +779,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114667003456986056, guid: 5088903ae1f280e4dab95d31f9fe4cf1,
           type: 2}
-        m_MethodName: LoadStartScene
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

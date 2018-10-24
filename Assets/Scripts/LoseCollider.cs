@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoseCollider : MonoBehaviour {
 
     SceneLoader sceneLoader;
+    [SerializeField] GameObject gameCanvas;
 
     private void Start()
     {
@@ -14,9 +15,8 @@ public class LoseCollider : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        sceneLoader.LoadLoseScene();
-        
+        FindObjectOfType<Ball>().FreezBall();
+        gameCanvas.GetComponent<Animator>().SetTrigger("looseLevel");
     }
 
 }
