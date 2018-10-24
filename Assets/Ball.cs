@@ -49,4 +49,9 @@ public class Ball : MonoBehaviour
         transform.position = paddlePos + paddleToBallVector;
     }
    
+    public void FreezBall()
+    {
+        ballRigibody.isKinematic = true;
+        ballRigibody.velocity = Vector2.zero;
+    }
 }

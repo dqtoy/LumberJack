@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour {
+public class LevelController : MonoBehaviour
+{
 
     [SerializeField] int breakableBlocks;       // for debugging purposes
 
     //cached reference
     SceneLoader sceneLoader;
+    ScoreUpdateText scoreText;
+    [SerializeField] GameObject gameCanvas;
 
     private void Start()
     {
+        scoreText = FindObjectOfType<ScoreUpdateText>();
         sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
@@ -22,9 +26,18 @@ public class LevelController : MonoBehaviour {
     public void destroyedBreakableBlock()
     {
         breakableBlocks--;
-        if(breakableBlocks <= 0)
+        scoreText.UpdateScore();
+
+        LevelClear();
+
+    }
+
+    private void LevelClear()
+    {
+        if (breakableBlocks <= 0)
         {
-            sceneLoader.LoadNextScene();
+            FindObjectOfType<Ball>().FreezBall();
+            gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
         }
     }
 }

@@ -8,13 +8,10 @@ public class GameSession : MonoBehaviour
 {
     // configuration parameters
     [Range(0, 2)] [SerializeField] float gameSpeed = 1f;
-    //[SerializeField] int pointsPerBlockDestoryed = 10;
-    [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoplayEnabled;
 
-
     // state variable
-    [SerializeField]  int currentScore = 0;
+    [SerializeField] int currentScore = 0;
 
     private static GameSession gameStatus = null;
 
@@ -26,37 +23,36 @@ public class GameSession : MonoBehaviour
         }
         else if (gameStatus != this)
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    // Use this for initialization
-    void Start()
-    {
-        UpdateScoreText();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        Time.timeScale = gameSpeed;            // 1f - regular time scale
+        Time.timeScale = gameSpeed;
     }
+
+    public void SetGameSpeed(float speed)
+    {
+        gameSpeed = speed;
+    }
+
 
     public void AddPointsToScore(int pointsPerBlockDestoryed)
     {
         currentScore += pointsPerBlockDestoryed;
-        UpdateScoreText();
     }
 
-    private void UpdateScoreText()
+    public int GetCurrentScore()
     {
-        scoreText.text = "Score: " + currentScore.ToString();
+        return currentScore;
     }
 
     public void ResetGame()
     {
+        currentScore = 0;
         Destroy(gameObject);
     }
 
@@ -65,8 +61,4 @@ public class GameSession : MonoBehaviour
         return isAutoplayEnabled;
     }
 
-    public int GetCurrentScore()
-    {
-        return currentScore;
-    }
 }

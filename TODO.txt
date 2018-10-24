@@ -1,0 +1,17 @@
+
+map scene animation
+Icons
+Fix issue with persistent score
+Panel for losing
+Fix bug with axe going thrue collider
+Main menu screen with animations
+buttons in gameplay to get back to main menu, pause and options
+Scene with map
+Graphic for swamp and mountain
+Option scene
+Credits scene
+Preference System for volume, SFX, level locked
+
+Skoñczyæ na podstawowej wersji grê z 6 level
+
+Dobudowaæ levele

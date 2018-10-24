@@ -20,11 +20,9 @@ public class Block : MonoBehaviour
     // backend elements - scores, counting etc.
     [SerializeField] int pointsPerBlockDestoryed = 10;
     LevelController levelController;
-    GameSession gameStatus;
 
     private void Start()
     {
-        gameStatus = FindObjectOfType<GameSession>();
         levelController = FindObjectOfType<LevelController>();
         levelController.countBreakableBlocks();
     }
@@ -54,7 +52,6 @@ public class Block : MonoBehaviour
 
     private void ShowNextHitSprite()
     {
-        //int spriteIndex = timesHitAlready - 1;
         if (hitSprites[timesHitAlready] != null)
         {
             GetComponent<SpriteRenderer>().sprite = hitSprites[timesHitAlready];
@@ -67,9 +64,9 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
+        FindObjectOfType<GameSession>().AddPointsToScore(pointsPerBlockDestoryed);
         levelController.destroyedBreakableBlock();
         Destroy(gameObject);
-        gameStatus.AddPointsToScore(pointsPerBlockDestoryed);
     }
 
     private void SpawnVFX()
