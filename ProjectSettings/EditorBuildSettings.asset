@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/02_LevelSandbox.unity
     guid: e556104608bd6a944bb8562f2d87a95b
   - enabled: 1
+    path: Assets/_Scenes/02_LevelSandbox 1.unity
+    guid: fadb6b5c2f4cdf8408cd82c58e0c74bb
+  - enabled: 1
+    path: Assets/_Scenes/02_LevelSandbox 2.unity
+    guid: 9246d16d620d85e46af677ee69fa1117
+  - enabled: 1
     path: Assets/_Scenes/00_GameOver.unity
     guid: 1149a1f85d538ac42bb6375189773d89
   m_configObjects: {}
