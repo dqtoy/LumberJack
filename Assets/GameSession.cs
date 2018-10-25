@@ -12,6 +12,7 @@ public class GameSession : MonoBehaviour
 
     // state variable
     [SerializeField] int currentScore = 0;
+    [SerializeField] int lifes = 3;
 
     private static GameSession gameStatus = null;
 
@@ -37,6 +38,16 @@ public class GameSession : MonoBehaviour
     public void AddPointsToScore(int pointsPerBlockDestoryed)
     {
         currentScore += pointsPerBlockDestoryed;
+    }
+
+    public void ReduceLifePoint()
+    {
+        lifes--;
+    }
+
+    public int GetCurrentLife()
+    {
+        return lifes;
     }
 
     public int GetCurrentScore()

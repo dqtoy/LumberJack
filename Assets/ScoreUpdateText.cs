@@ -6,7 +6,6 @@ public class ScoreUpdateText : MonoBehaviour
 {
 
     TextMeshProUGUI scoreText;
-    int score;
 
 
     void Start()

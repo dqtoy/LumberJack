@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
   launchForce: {x: 2, y: 15}
+  unFreezTime: 0.8
+  hasStarted: 0
 --- !u!212 &212436519693940388
 SpriteRenderer:
   m_ObjectHideFlags: 1

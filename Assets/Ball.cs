@@ -9,18 +9,21 @@ public class Ball : MonoBehaviour
     //config parameters
     [SerializeField] Paddle paddle1;
     [SerializeField] Vector2 launchForce;
+    [SerializeField] float unFreezTime = 0.5f;
     Rigidbody2D ballRigibody;
 
     // state
     Vector2 paddleToBallVector;
-    bool hasStarted = false;
+    [SerializeField] bool hasStarted = false;
 
     Vector2 tempVelocity;
+    Vector2 startPosition;
 
     // Use this for initialization
     void Start()
     {
         ballRigibody = GetComponent<Rigidbody2D>();
+        startPosition = transform.position;
         paddleToBallVector = transform.position - paddle1.transform.position;
     }
 
@@ -32,8 +35,6 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
             LaunchBall();
         }
-       
-
     }
 
     private void LaunchBall()
@@ -60,11 +61,24 @@ public class Ball : MonoBehaviour
     public void UnFreezeBall()
     {
         ballRigibody.constraints = RigidbodyConstraints2D.None;
-        Invoke("RestoreVelocity", 1f);
+        Invoke("RestoreVelocity", unFreezTime);
     }
 
     private void RestoreVelocity()
     {
         ballRigibody.velocity = tempVelocity;
+    }
+
+    public void WiatForResetBallPostion()
+    {
+        Invoke("ResetBallPosition", 1f);
+    }
+
+    private void ResetBallPosition()
+    {
+        ballRigibody.velocity = Vector3.zero;
+        ballRigibody.angularVelocity = 0;
+        hasStarted = false;
+        transform.position = startPosition;
     }
 }
