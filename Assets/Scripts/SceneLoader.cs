@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour {
 
     GameSession gameStatus;
+    //static int lastSceneIndex;
 
 
     public void LoadNextScene()
@@ -23,20 +24,28 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("00_MainMenu");
     }
 
-    public void LoadLoseScene()
+    public void LoadMainMenuAfterLose()
     {
         FindObjectOfType<GameSession>().ResetGame();
-        SceneManager.LoadScene("00_GameOver");
-    }
-
-    public void LoadWinScene()
-    {
-        SceneManager.LoadScene("00_GameOver");
+        SceneManager.LoadScene("00_MainMenu");
     }
 
     public void LoadOptions()
     {
         SceneManager.LoadScene("00_Options");
+    }
+
+    public void LoadOptionsFromGameplay()
+    {
+        //lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //Debug.Log(lastSceneIndex);
+        SceneManager.LoadScene("00_Options", LoadSceneMode.Additive);
+    }
+
+    public void BackToGamePlay()
+    {
+        //SceneManager.LoadScene(lastSceneIndex);
+        SceneManager.UnloadSceneAsync("00_Options");
     }
 
     public void LoadCredits()

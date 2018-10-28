@@ -1,10 +1,11 @@
 Animacja drwala na MainMenu++
 
-Scena opcji
+Scena opcji ++ 
+do rozwi¹zania - zapauzowanie sceny i powrót do gry!++
 
 Scena Mapy
 
-Opcja dotacji
+Opcja dotacji++
 
 Muzyka
 

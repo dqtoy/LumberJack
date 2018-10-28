@@ -9,14 +9,23 @@ EditorBuildSettings:
     path: Assets/_Scenes/00_MainMenu.unity
     guid: 6fc4426b495202a4f90d048044bbfc12
   - enabled: 1
-    path: Assets/_Scenes/02_LevelSandbox.unity
-    guid: e556104608bd6a944bb8562f2d87a95b
+    path: Assets/_Scenes/01_Level01.unity
+    guid: 2ce47cb096543f840a65011d37714d41
   - enabled: 1
-    path: Assets/_Scenes/02_LevelSandbox 1.unity
-    guid: fadb6b5c2f4cdf8408cd82c58e0c74bb
+    path: Assets/_Scenes/01_Level02.unity
+    guid: ab63838e520a79b458bf2f3eb42ef71c
   - enabled: 1
-    path: Assets/_Scenes/02_LevelSandbox 2.unity
-    guid: 2f4fbace28f854441a45436bca56ea95
+    path: Assets/_Scenes/01_Level03.unity
+    guid: f9c60391b3a35244495b14e27a8ffd98
+  - enabled: 1
+    path: Assets/_Scenes/01_Level04.unity
+    guid: a2e7f5a7e4661a54e801a8ce26f09260
+  - enabled: 1
+    path: Assets/_Scenes/01_Level05.unity
+    guid: 65469f25d61d23241abfb58f534c3d5c
+  - enabled: 1
+    path: Assets/_Scenes/01_Level06.unity
+    guid: 81d7594cbff5ea64aafb2564437da354
   - enabled: 1
     path: Assets/_Scenes/00_GameOver.unity
     guid: 1149a1f85d538ac42bb6375189773d89
