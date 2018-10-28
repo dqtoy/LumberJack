@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: LumberJack
+    uniqueID: 3749286077
+    locked: 0

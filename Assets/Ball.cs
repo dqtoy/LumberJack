@@ -11,11 +11,12 @@ public class Ball : MonoBehaviour
     [SerializeField] Vector2 launchForce;
     [SerializeField] float unFreezTime = 0.5f;
     Rigidbody2D ballRigibody;
+    [SerializeField] GameObject gameCanvas;
+    [SerializeField] GameObject startButton;
 
     // state
     Vector2 paddleToBallVector;
     [SerializeField] bool hasStarted = false;
-
     Vector2 tempVelocity;
     Vector2 startPosition;
 
@@ -25,7 +26,6 @@ public class Ball : MonoBehaviour
         ballRigibody = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         paddleToBallVector = transform.position - paddle1.transform.position;
-        
     }
 
     // Update is called once per frame
@@ -34,17 +34,18 @@ public class Ball : MonoBehaviour
         if (!hasStarted)
         {
             LockBallToPaddle();
-            LaunchBall();
+            //LaunchBall();
         }
     }
 
-    private void LaunchBall()
+    public void LaunchBall()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            ballRigibody.velocity = launchForce;
-            hasStarted = true;
-        }
+        //if (Input.GetMouseButtonUp(0))
+        //{
+        ballRigibody.velocity = launchForce;
+        hasStarted = true;
+        startButton.SetActive(false);
+        //}
     }
 
     private void LockBallToPaddle()
@@ -52,7 +53,7 @@ public class Ball : MonoBehaviour
         Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
     }
-   
+
     public void FreezBall()
     {
         tempVelocity = ballRigibody.velocity;
@@ -81,5 +82,6 @@ public class Ball : MonoBehaviour
         ballRigibody.angularVelocity = 0;
         hasStarted = false;
         transform.position = startPosition;
+        startButton.SetActive(true);
     }
 }

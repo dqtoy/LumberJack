@@ -34,6 +34,26 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("00_GameOver");
     }
 
+    public void LoadOptions()
+    {
+        SceneManager.LoadScene("00_Options");
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("00_Credits");
+    }
+
+    public void LaunchFacebook()
+    {
+        Application.OpenURL("https://www.facebook.com/LongEarDevelopment/");
+    }
+
+    public void LaunchPayPal()
+    {
+        Application.OpenURL("https://www.paypal.me/longeardev");
+    }
+
     public void QuitApplication()
     {
         Application.Quit();

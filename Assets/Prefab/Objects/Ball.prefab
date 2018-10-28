@@ -239,6 +239,8 @@ MonoBehaviour:
   paddle1: {fileID: 0}
   launchForce: {x: 2, y: 15}
   unFreezTime: 0.8
+  gameCanvas: {fileID: 0}
+  startButton: {fileID: 0}
   hasStarted: 0
 --- !u!212 &212436519693940388
 SpriteRenderer:
