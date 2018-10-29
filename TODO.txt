@@ -9,3 +9,5 @@ Opcja dotacji++
 
 Muzyka
 
+Stworzenie regulacji muzyki i efektów, high score level unlock
+

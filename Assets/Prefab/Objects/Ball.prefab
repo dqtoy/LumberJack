@@ -120,7 +120,8 @@ AudioSource:
   m_GameObject: {fileID: 1330061121647828}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243121006750339022, guid: ec775c5a9cfde8b49b9191e60eaf8c78,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -223,8 +224,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ed275836b789ea64da4b6c1425a4abe7, type: 3}
   - {fileID: 8300000, guid: 6cd827ae556b80347acda545ee7e6a0b, type: 3}
   crackVolume: 0.8
+  blockDestory: {fileID: 8300000, guid: 5a1bbd9c2d809ea4992703f0ef69f090, type: 3}
+  destoryVolume: 1
   bounceSound: {fileID: 8300000, guid: b01ef39ce23a72e4f94daaeb116fd66d, type: 3}
   bounceVolume: 0.3
+  stoneSound: {fileID: 8300000, guid: d1fda9d1fa99f4944b88b883fd370f22, type: 3}
+  stoneVolume: 0.3
 --- !u!114 &114092548649912330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
-  launchForce: {x: 2, y: 15}
+  launchForce: {x: 2, y: 12}
   unFreezTime: 0.8
   gameCanvas: {fileID: 0}
   startButton: {fileID: 0}

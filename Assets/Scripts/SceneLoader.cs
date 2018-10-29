@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-    GameSession gameStatus;
-    //static int lastSceneIndex;
+  
 
+    GameSession gameStatus;
+
+    
 
     public void LoadNextScene()
     {
@@ -37,14 +39,11 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadOptionsFromGameplay()
     {
-        //lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //Debug.Log(lastSceneIndex);
         SceneManager.LoadScene("00_Options", LoadSceneMode.Additive);
     }
 
     public void BackToGamePlay()
     {
-        //SceneManager.LoadScene(lastSceneIndex);
         SceneManager.UnloadSceneAsync("00_Options");
     }
 
@@ -67,5 +66,7 @@ public class SceneLoader : MonoBehaviour {
     {
         Application.Quit();
     }
+
+  
 
 }

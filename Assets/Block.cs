@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    // audio elements
-    [SerializeField] AudioClip destoryBlockSound;
-    [Range(0, 1)] [SerializeField] float volumeLevel = 1f;
     // visual efect elements
     [SerializeField] GameObject blockVFX;
     [SerializeField] float vfxLiveTime = 2f;
@@ -41,7 +38,7 @@ public class Block : MonoBehaviour
         int maxHitsForBlock = hitSprites.Length;
         if (timesHitAlready >= maxHitsForBlock)
         {
-            AudioSource.PlayClipAtPoint(destoryBlockSound, Camera.main.transform.position, volumeLevel);
+            FindObjectOfType<BallAudio>().PlayDestroyBlock();
             DestroyBlock();
         }
         else
@@ -65,6 +62,7 @@ public class Block : MonoBehaviour
     private void DestroyBlock()
     {
         FindObjectOfType<GameSession>().AddPointsToScore(pointsPerBlockDestoryed);
+        
         levelController.destroyedBreakableBlock();
         Destroy(gameObject);
     }

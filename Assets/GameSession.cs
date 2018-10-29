@@ -32,7 +32,7 @@ public class GameSession : MonoBehaviour
 
     void Update()
     {
-       // Time.timeScale = gameSpeed;
+        Time.timeScale = gameSpeed;
     }
 
     public void AddPointsToScore(int pointsPerBlockDestoryed)

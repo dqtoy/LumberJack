@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4779228432813950}
   - component: {fileID: 212037557115087732}
   - component: {fileID: 61305158591175128}
-  - component: {fileID: 114431418448853658}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Stone
@@ -67,19 +66,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.89976287, y: 0.34442258}
   m_EdgeRadius: 0
---- !u!114 &114431418448853658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1942401849420148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da8f9f8a16c3da4d9744053f6b5014f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stoneClip: {fileID: 8300000, guid: d1fda9d1fa99f4944b88b883fd370f22, type: 3}
-  sfxLevel: 0.3
 --- !u!212 &212037557115087732
 SpriteRenderer:
   m_ObjectHideFlags: 1
