@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
-  launchForce: {x: 2, y: 12}
+  launchForce: {x: 2, y: 13}
   unFreezTime: 0.8
   gameCanvas: {fileID: 0}
   startButton: {fileID: 0}
