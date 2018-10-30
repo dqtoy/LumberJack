@@ -78,12 +78,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d0fc4068f2d38448c3ff3cfcc1e11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destoryBlockSound: {fileID: 8300000, guid: 5a1bbd9c2d809ea4992703f0ef69f090, type: 3}
-  volumeLevel: 1
   blockVFX: {fileID: 100000, guid: 137a956dcb425744aaee58ea989be3d3, type: 2}
   vfxLiveTime: 2
   timesHitAlready: 0
   hitSprites: []
+  powerUps:
+  - {fileID: 1378942648397016, guid: 8e3aebd0189018143b3682903b224e03, type: 2}
+  tresholdForPowerUpSpawn: 7
   pointsPerBlockDestoryed: 10
 --- !u!212 &212797081248798166
 SpriteRenderer:

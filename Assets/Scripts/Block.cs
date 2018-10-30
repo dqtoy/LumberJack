@@ -13,6 +13,10 @@ public class Block : MonoBehaviour
     [SerializeField] int timesHitAlready = 0; // serialized for debug
     [SerializeField] Sprite[] hitSprites;
 
+    //spawning powerUps
+    [SerializeField] GameObject[] powerUps = new GameObject[1];
+    [Range(0,10)][SerializeField] int tresholdForPowerUpSpawn = 7;
+
 
     // backend elements - scores, counting etc.
     [SerializeField] int pointsPerBlockDestoryed = 10;
@@ -62,7 +66,7 @@ public class Block : MonoBehaviour
     private void DestroyBlock()
     {
         FindObjectOfType<GameSession>().AddPointsToScore(pointsPerBlockDestoryed);
-        
+        SpawnPowerUp();
         levelController.destroyedBreakableBlock();
         Destroy(gameObject);
     }
@@ -71,5 +75,16 @@ public class Block : MonoBehaviour
     {
         GameObject vfx = Instantiate(blockVFX, transform.position, transform.rotation);
         Destroy(vfx, vfxLiveTime);
+    }
+
+    private void SpawnPowerUp()
+    {
+        int chance = UnityEngine.Random.Range(0, 10);
+        Debug.Log(chance);
+        int index = UnityEngine.Random.Range(0, powerUps.Length-1);
+        if(chance > tresholdForPowerUpSpawn)
+        {
+            Instantiate(powerUps[index], transform.position, transform.rotation);
+        }
     }
 }
