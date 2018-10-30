@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 61754207346228762}
   - component: {fileID: 50446039995049134}
   - component: {fileID: 82138837765221378}
-  - component: {fileID: 114773187203475208}
+  - component: {fileID: 114621512670222604}
   m_Layer: 0
-  m_Name: PowerUpLong
+  m_Name: PowerUpRestart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114773187203475208
+--- !u!114 &114621512670222604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,13 +193,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378942648397016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a970152ee042d74cb0e586c0aee4318, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b0691f986c502740985f85d0e7a857d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   VFXforPickUp: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
-  vfxLifeTime: 2
-  _lengthMultiplier: {x: 0.8, y: 0.2, z: 0}
-  timeOfPowerUp: 5
+  vfxLifeTime: 1
+  timeOfPowerUp: 10
   maxLifeTime: 30
 --- !u!212 &212968172373095458
 SpriteRenderer:

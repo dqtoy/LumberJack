@@ -20,6 +20,8 @@ public class Ball : MonoBehaviour
     Vector2 tempVelocity;
     Vector2 startPosition;
 
+    [SerializeField] bool isPowerUpRestartActive = false;
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +38,16 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
             //LaunchBall();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isPowerUpRestartActive && collision.gameObject.CompareTag("Paddle"))
+            
+        {
+            ResetBallPosition();
+        }
+
     }
 
     public void LaunchBall()
@@ -84,4 +96,10 @@ public class Ball : MonoBehaviour
         transform.position = startPosition;
         startButton.SetActive(true);
     }
+    
+    public void SetIsPowerUpRestartActive(bool state)
+    {
+        isPowerUpRestartActive = state;
+    }
+
 }

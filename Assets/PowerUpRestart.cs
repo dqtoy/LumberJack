@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpLong : MonoBehaviour
-{
+public class PowerUpRestart : MonoBehaviour {
+
     [SerializeField] GameObject VFXforPickUp;
     [SerializeField] float vfxLifeTime = 1f;
-    [SerializeField] Vector3 _lengthMultiplier = new Vector3(0.5f, 0, 0);
     [SerializeField] float timeOfPowerUp = 5f;
     [SerializeField] float maxLifeTime = 30f;
 
@@ -20,9 +18,9 @@ public class PowerUpLong : MonoBehaviour
     {
         if (collision.CompareTag("Paddle"))
         {
-            StartCoroutine (PickUp(collision));
+            StartCoroutine(PickUp(collision));
         }
-       
+
     }
 
     IEnumerator PickUp(Collider2D player)
@@ -31,7 +29,7 @@ public class PowerUpLong : MonoBehaviour
         PlayEffects();
 
         // Apply effect
-        player.transform.localScale += _lengthMultiplier;
+        FindObjectOfType<Ball>().SetIsPowerUpRestartActive(true);
 
         //turn off rendering and collider
         DisabeVisualOfPowerUp();
@@ -40,7 +38,7 @@ public class PowerUpLong : MonoBehaviour
         yield return new WaitForSeconds(timeOfPowerUp);
 
         // revers
-        player.transform.localScale -= _lengthMultiplier;
+        FindObjectOfType<Ball>().SetIsPowerUpRestartActive(false);
 
         //remove object
         Destroy(gameObject);

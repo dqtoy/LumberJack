@@ -83,8 +83,9 @@ MonoBehaviour:
   timesHitAlready: 0
   hitSprites: []
   powerUps:
+  - {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6, type: 2}
   - {fileID: 1378942648397016, guid: 8e3aebd0189018143b3682903b224e03, type: 2}
-  tresholdForPowerUpSpawn: 7
+  tresholdForPowerUpSpawn: 9
   pointsPerBlockDestoryed: 10
 --- !u!212 &212797081248798166
 SpriteRenderer:
