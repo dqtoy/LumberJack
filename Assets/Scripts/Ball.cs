@@ -14,6 +14,7 @@ public class Ball : MonoBehaviour
     [SerializeField] GameObject gameCanvas;
     [SerializeField] GameObject startButton;
 
+
     // state
     Vector2 paddleToBallVector;
     [SerializeField] bool hasStarted = false;
@@ -21,7 +22,9 @@ public class Ball : MonoBehaviour
     Vector2 startPosition;
 
     [SerializeField] bool isPowerUpRestartActive = false;
+    [SerializeField] bool isPowerUpChainsawActive = false;
 
+    [SerializeField] Sprite[] balls = new Sprite[2];
     // Use this for initialization
     void Start()
     {
@@ -36,14 +39,33 @@ public class Ball : MonoBehaviour
         if (!hasStarted)
         {
             LockBallToPaddle();
-            //LaunchBall();
         }
+
+        if (isPowerUpChainsawActive)
+        {
+
+           SwapSpriteToChainsaw();
+        }
+        else
+        {
+            SwapSpriteToAxe();
+        }
+    }
+
+    private void SwapSpriteToAxe()
+    {
+        GetComponent<SpriteRenderer>().sprite = balls[0];
+    }
+
+    private void SwapSpriteToChainsaw()
+    {
+        GetComponent<SpriteRenderer>().sprite = balls[1];
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isPowerUpRestartActive && collision.gameObject.CompareTag("Paddle"))
-            
+
         {
             ResetBallPosition();
         }
@@ -96,10 +118,20 @@ public class Ball : MonoBehaviour
         transform.position = startPosition;
         startButton.SetActive(true);
     }
-    
+
     public void SetIsPowerUpRestartActive(bool state)
     {
         isPowerUpRestartActive = state;
+    }
+
+    public void SetIsPowerUpChainsawActive(bool state)
+    {
+        isPowerUpChainsawActive = state;
+    }
+
+    public bool GetIsPowerUpChainsawActive()
+    {
+        return isPowerUpChainsawActive;
     }
 
 }

@@ -15,7 +15,7 @@ public class Block : MonoBehaviour
 
     //spawning powerUps
     [SerializeField] GameObject[] powerUps = new GameObject[1];
-    [Range(0,10)][SerializeField] int tresholdForPowerUpSpawn = 7;
+    [Range(0, 10)] [SerializeField] int tresholdForPowerUpSpawn = 7;
 
 
     // backend elements - scores, counting etc.
@@ -31,8 +31,14 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SpawnVFX();
-
-        HandleHit();
+        if (FindObjectOfType<Ball>().GetIsPowerUpChainsawActive())
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            HandleHit();
+        }
 
     }
 
@@ -42,7 +48,6 @@ public class Block : MonoBehaviour
         int maxHitsForBlock = hitSprites.Length;
         if (timesHitAlready >= maxHitsForBlock)
         {
-            FindObjectOfType<BallAudio>().PlayDestroyBlock();
             DestroyBlock();
         }
         else
@@ -65,6 +70,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
+        FindObjectOfType<BallAudio>().PlayDestroyBlock();
         FindObjectOfType<GameSession>().AddPointsToScore(pointsPerBlockDestoryed);
         SpawnPowerUp();
         levelController.destroyedBreakableBlock();
@@ -82,7 +88,7 @@ public class Block : MonoBehaviour
         int chance = UnityEngine.Random.Range(0, 11);
         Debug.Log(chance);
         int index = UnityEngine.Random.Range(0, powerUps.Length);
-        if(chance >= tresholdForPowerUpSpawn)
+        if (chance >= tresholdForPowerUpSpawn)
         {
             Instantiate(powerUps[index], transform.position, transform.rotation);
         }

@@ -13,7 +13,7 @@ public class LoseCollider : MonoBehaviour
         if (isMultiPowerUp)
         {
             count = FindObjectsOfType<Ball>().Length;
-            if (count == 1)
+            if (count <= 1)
             {
                 SetIsMultiPowerUp(false);
             }

@@ -13,6 +13,9 @@ public class BallAudio : MonoBehaviour
     [Range(0, 1)] [SerializeField] float bounceVolume = 0.3f;
     [SerializeField] AudioClip stoneSound;
     [Range(0, 1)] [SerializeField] float stoneVolume = 0.3f;
+    [SerializeField] AudioClip chainsawSound;
+    [Range(0, 1)] [SerializeField] float chainsawVolume = 0.5f;
+
 
     AudioSource ballAudio;
 
@@ -25,12 +28,13 @@ public class BallAudio : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.tag == "Brick")
         {
             int index = Random.Range(0, crackSound.Length);
             ballAudio.PlayOneShot(crackSound[index], crackVolume);
         }
-        else if(collision.gameObject.tag == "Stone")
+        else if (collision.gameObject.tag == "Stone")
         {
             ballAudio.PlayOneShot(stoneSound, stoneVolume);
         }
@@ -38,6 +42,11 @@ public class BallAudio : MonoBehaviour
         {
             ballAudio.PlayOneShot(bounceSound, bounceVolume);
         }
+    }
+
+    public void PlayChainsawAudio()
+    {
+        ballAudio.PlayOneShot(chainsawSound, chainsawVolume);
     }
 
     public void PlayDestroyBlock()
