@@ -45,6 +45,11 @@ public class GameSession : MonoBehaviour
         lifes--;
     }
 
+    public void AddLifePoint()
+    {
+        lifes++;
+    }
+
     public int GetCurrentLife()
     {
         return lifes;

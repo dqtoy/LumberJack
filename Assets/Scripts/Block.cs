@@ -79,10 +79,10 @@ public class Block : MonoBehaviour
 
     private void SpawnPowerUp()
     {
-        int chance = UnityEngine.Random.Range(0, 10);
+        int chance = UnityEngine.Random.Range(0, 11);
         Debug.Log(chance);
         int index = UnityEngine.Random.Range(0, powerUps.Length);
-        if(chance > tresholdForPowerUpSpawn)
+        if(chance >= tresholdForPowerUpSpawn)
         {
             Instantiate(powerUps[index], transform.position, transform.rotation);
         }

@@ -86,9 +86,8 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 684f81c4e6d0d3442a8ce00cf8fac42d, type: 3}
   - {fileID: 21300004, guid: 684f81c4e6d0d3442a8ce00cf8fac42d, type: 3}
   powerUps:
-  - {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6, type: 2}
-  - {fileID: 1378942648397016, guid: 8e3aebd0189018143b3682903b224e03, type: 2}
-  tresholdForPowerUpSpawn: 9
+  - {fileID: 1378942648397016, guid: 9253dd28ad92e4d488333a7f7987b123, type: 2}
+  tresholdForPowerUpSpawn: 6
   pointsPerBlockDestoryed: 20
 --- !u!212 &212797081248798166
 SpriteRenderer:

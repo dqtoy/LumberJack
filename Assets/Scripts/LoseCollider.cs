@@ -5,19 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class LoseCollider : MonoBehaviour
 {
-    Ball ball;
     [SerializeField] GameObject gameCanvas;
-
-
-    private void Start()
+    [SerializeField] bool isMultiPowerUp = false;
+    public int count;
+    private void Update()
     {
-        ball = FindObjectOfType<Ball>();
+        if (isMultiPowerUp)
+        {
+            count = FindObjectsOfType<Ball>().Length;
+            if (count == 1)
+            {
+                SetIsMultiPowerUp(false);
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            if (!isMultiPowerUp)
+            {
+                ProcessingBallFall();
+            }
+            else
+            {
+                WhenMultiPowerUpOn(collision);
+            }
+        }
+    }
+
+    private void ProcessingBallFall()
     {
         FindObjectOfType<GameSession>().ReduceLifePoint();
-        //ball.FreezBall();
         if (FindObjectOfType<GameSession>().GetCurrentLife() < 0)
         {
             gameCanvas.GetComponent<Animator>().SetTrigger("looseLevel");
@@ -31,7 +52,24 @@ public class LoseCollider : MonoBehaviour
 
     private void ProcessResetBall()
     {
-        ball.WiatForResetBallPostion();
-        //ball.UnFreezeBall();
+        FindObjectOfType<Ball>().WiatForResetBallPostion();
+    }
+
+    public void SetIsMultiPowerUp(bool state)
+    {
+        isMultiPowerUp = state;
+    }
+
+    public bool IsMultiPowerUp()
+    {
+        return isMultiPowerUp;
+    }
+
+    private void WhenMultiPowerUpOn(Collider2D collision)
+    {
+        if (count > 1)
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

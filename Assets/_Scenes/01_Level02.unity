@@ -113,6 +113,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &84789663
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1632295383}
+    m_Modifications:
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0353c0d233126b48880d4420134a5d9, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &84789664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4793339538029348, guid: b0353c0d233126b48880d4420134a5d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 84789663}
 --- !u!4 &100964594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4737382162812686, guid: 18ff36d9a87795d43ab6ae0e6913a92e,
@@ -1340,6 +1387,7 @@ Transform:
   - {fileID: 1059061527}
   - {fileID: 1447013192}
   - {fileID: 100964594}
+  - {fileID: 84789664}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

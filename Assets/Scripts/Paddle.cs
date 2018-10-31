@@ -14,12 +14,12 @@ public class Paddle : MonoBehaviour
     // Use this for initialization
 
     GameSession gameSession;
-    Ball ball;
+    //Ball ball;
 
     void Start()
     {
         gameSession = FindObjectOfType<GameSession>();
-        ball = FindObjectOfType<Ball>();
+        //ball = FindObjectOfType<Ball>();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class Paddle : MonoBehaviour
     {
         if (gameSession.IsAutoPlayEnabled())
         {
-            return ball.transform.position.x;
+            return FindObjectOfType<Ball>().transform.position.x;
         }
         else
         {
