@@ -14,6 +14,8 @@ public class GameSession : MonoBehaviour
     [SerializeField] int currentScore = 0;
     [SerializeField] int lifes = 3;
 
+    List<Ball> balls = new List<Ball>();
+
     private static GameSession gameStatus = null;
 
     private void Awake()
@@ -30,9 +32,28 @@ public class GameSession : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        CountBalls();
+    }
+
+    private void CountBalls()
+    {
+        Ball[] countBalls = FindObjectsOfType<Ball>();
+        foreach (var ball in countBalls)
+        {
+            balls.Add(ball);
+        }
+    }
+
     void Update()
     {
         Time.timeScale = gameSpeed;
+        if(balls.Count == 0)
+        {
+            FindObjectOfType<Paddle>().SpawnBall();
+            CountBalls();
+        }
     }
 
     public void AddPointsToScore(int pointsPerBlockDestoryed)
@@ -69,6 +90,11 @@ public class GameSession : MonoBehaviour
     public bool IsAutoPlayEnabled()
     {
         return isAutoplayEnabled;
+    }
+
+    public void SubFromBalls(Ball ball)
+    {
+        balls.Remove(ball);
     }
 
 }

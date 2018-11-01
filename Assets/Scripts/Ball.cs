@@ -12,24 +12,25 @@ public class Ball : MonoBehaviour
     [SerializeField] float unFreezTime = 0.5f;
     Rigidbody2D ballRigibody;
     [SerializeField] GameObject gameCanvas;
-    [SerializeField] GameObject startButton;
 
 
     // state
     Vector2 paddleToBallVector;
     [SerializeField] bool hasStarted = false;
     Vector2 tempVelocity;
-    Vector2 startPosition;
+    //public Vector2 startPosition = new Vector2(3.12f, 1.73f);
 
     [SerializeField] bool isPowerUpRestartActive = false;
     [SerializeField] bool isPowerUpChainsawActive = false;
 
     [SerializeField] Sprite[] balls = new Sprite[2];
+
+
     // Use this for initialization
     void Start()
     {
+        paddle1 = FindObjectOfType<Paddle>();
         ballRigibody = GetComponent<Rigidbody2D>();
-        startPosition = transform.position;
         paddleToBallVector = transform.position - paddle1.transform.position;
     }
 
@@ -41,10 +42,21 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
         }
 
+        ChangingSprites();
+
+        //if(transform.position.y < -3)
+        //{
+        //    SeekAndDestroy();
+        //}
+
+    }
+
+    private void ChangingSprites()
+    {
         if (isPowerUpChainsawActive)
         {
 
-           SwapSpriteToChainsaw();
+            SwapSpriteToChainsaw();
         }
         else
         {
@@ -74,12 +86,8 @@ public class Ball : MonoBehaviour
 
     public void LaunchBall()
     {
-        //if (Input.GetMouseButtonUp(0))
-        //{
         ballRigibody.velocity = launchForce;
         hasStarted = true;
-        startButton.SetActive(false);
-        //}
     }
 
     private void LockBallToPaddle()
@@ -112,11 +120,11 @@ public class Ball : MonoBehaviour
 
     private void ResetBallPosition()
     {
-        ballRigibody.velocity = Vector3.zero;
-        ballRigibody.angularVelocity = 0;
         hasStarted = false;
-        transform.position = startPosition;
-        startButton.SetActive(true);
+        //ballRigibody.velocity = Vector3.zero;
+        //ballRigibody.angularVelocity = 0;
+        //transform.position = startPosition;
+        FindObjectOfType<Paddle>().SetActiveStartButton();
     }
 
     public void SetIsPowerUpRestartActive(bool state)
@@ -134,4 +142,15 @@ public class Ball : MonoBehaviour
         return isPowerUpChainsawActive;
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "LoseCollider")
+        {
+            FindObjectOfType<GameSession>().SubFromBalls(this);
+            Destroy(gameObject);
+        }
+    }
+
+    
 }
+

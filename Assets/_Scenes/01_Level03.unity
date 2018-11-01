@@ -315,6 +315,11 @@ Prefab:
       propertyPath: moveSlider
       value: 
       objectReference: {fileID: 1096437632}
+    - target: {fileID: 114939454852994308, guid: 9c1a23d69cbc5e042a8c6ae5dd602c1e,
+        type: 2}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 1274914727}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1a23d69cbc5e042a8c6ae5dd602c1e, type: 2}
   m_IsPrefabAsset: 0
@@ -1030,7 +1035,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1666850078}
+      objectReference: {fileID: 2075618914}
     - target: {fileID: 223647218373609560, guid: a579e15a83c730344bcca7e1cc85c5e5,
         type: 2}
       propertyPath: m_Camera
@@ -1095,6 +1100,11 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114157791998501782, guid: a579e15a83c730344bcca7e1cc85c5e5,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LaunchBall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a579e15a83c730344bcca7e1cc85c5e5, type: 2}
@@ -1488,12 +1498,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1666850078 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114092548649912330, guid: 07687564e2efd86459ad15f046be3f3f,
-    type: 2}
-  m_PrefabInternal: {fileID: 711676819}
-  m_Script: {fileID: 11500000, guid: ed1df361f3ab86d4290e4b4f850292eb, type: 3}
 --- !u!1001 &1716582286
 Prefab:
   m_ObjectHideFlags: 0

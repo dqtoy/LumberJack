@@ -8,6 +8,8 @@ TagManager:
   - Stone
   - Paddle
   - Ball
+  - LoseCollider
+  - StartButton
   layers:
   - Default
   - TransparentFX

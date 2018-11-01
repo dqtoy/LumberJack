@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114197451490528316}
   m_Layer: 0
   m_Name: LoseCollider
-  m_TagString: Untagged
+  m_TagString: LoseCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fc53d7ce065354f8fc862a21f9d66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCanvas: {fileID: 0}
-  isMultiPowerUp: 0
-  count: 2

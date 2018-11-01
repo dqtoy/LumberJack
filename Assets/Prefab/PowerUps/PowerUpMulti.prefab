@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61754207346228762}
   - component: {fileID: 50446039995049134}
   - component: {fileID: 82138837765221378}
-  - component: {fileID: 114683122304621368}
+  - component: {fileID: 114621512670222604}
   m_Layer: 0
   m_Name: PowerUpMulti
   m_TagString: Untagged
@@ -185,7 +185,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114683122304621368
+--- !u!114 &114621512670222604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,12 +193,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378942648397016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345aaf0d16ddebc48991ec9517e9b5b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b0691f986c502740985f85d0e7a857d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   VFXforPickUp: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
   vfxLifeTime: 1
-  timeOfPowerUp: 5
+  timeOfPowerUp: 10
   maxLifeTime: 30
 --- !u!212 &212968172373095458
 SpriteRenderer:
