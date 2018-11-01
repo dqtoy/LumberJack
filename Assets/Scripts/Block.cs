@@ -65,7 +65,7 @@ public class Block : MonoBehaviour
         else
         {
             Debug.LogError("Block sprite is missing from array!" + gameObject);
-        }
+     }
     }
 
     private void DestroyBlock()
@@ -86,7 +86,6 @@ public class Block : MonoBehaviour
     private void SpawnPowerUp()
     {
         int chance = UnityEngine.Random.Range(0, 11);
-        Debug.Log(chance);
         int index = UnityEngine.Random.Range(0, powerUps.Length);
         if (chance >= tresholdForPowerUpSpawn)
         {

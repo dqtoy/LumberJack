@@ -11,7 +11,8 @@ public class RemainsLifeDisplay : MonoBehaviour
     void Start()
     {
         liveText = GetComponent<TextMeshProUGUI>();
-        liveText.text = "x" + FindObjectOfType<GameSession>().GetCurrentLife().ToString();
+        //liveText.text = "x" + FindObjectOfType<GameSession>().GetCurrentLife().ToString();
+        UpdateLive(FindObjectOfType<GameSession>().GetCurrentLife());
     }
 
     // Update is called once per frame
@@ -20,8 +21,9 @@ public class RemainsLifeDisplay : MonoBehaviour
 
     }
 
-    public void UpdateLive()
+    public void UpdateLive(int lifes)
     {
-        liveText.text = "x" + FindObjectOfType<GameSession>().GetCurrentLife().ToString();
+        //liveText.text = "x" + FindObjectOfType<GameSession>().GetCurrentLife().ToString();
+        liveText.text = "x" + lifes.ToString();
     }
 }

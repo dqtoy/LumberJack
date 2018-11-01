@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 222465833755827030}
   - component: {fileID: 114308376044489270}
   - component: {fileID: 114157791998501782}
+  - component: {fileID: 114813465339255984}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: StartButton
@@ -198,7 +199,7 @@ GameObject:
   - component: {fileID: 95271367954930182}
   m_Layer: 5
   m_Name: GameCanvas
-  m_TagString: Untagged
+  m_TagString: GameCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2383,6 +2384,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114813465339255984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378437664454638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3eca85bf3d8cb4994e57d853cb87af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114848900055993808
 MonoBehaviour:
   m_ObjectHideFlags: 1

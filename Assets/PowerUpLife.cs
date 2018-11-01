@@ -30,7 +30,6 @@ public class PowerUpLife : MonoBehaviour
 
         // Apply effect
         FindObjectOfType<GameSession>().AddLifePoint();
-        FindObjectOfType<RemainsLifeDisplay>().UpdateLive();
         //turn off rendering and collider
         DisabeVisualOfPowerUp();
 

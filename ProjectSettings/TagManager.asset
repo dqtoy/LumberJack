@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - LoseCollider
   - StartButton
+  - GameCanvas
   layers:
   - Default
   - TransparentFX

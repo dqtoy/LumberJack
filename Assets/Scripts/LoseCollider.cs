@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoseCollider : MonoBehaviour
 {
+
+     
     //[SerializeField] GameObject gameCanvas;
     //private void Update()
     //{

@@ -43,12 +43,6 @@ public class Ball : MonoBehaviour
         }
 
         ChangingSprites();
-
-        //if(transform.position.y < -3)
-        //{
-        //    SeekAndDestroy();
-        //}
-
     }
 
     private void ChangingSprites()
@@ -146,7 +140,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.tag == "LoseCollider")
         {
-            FindObjectOfType<GameSession>().SubFromBalls(this);
+            FindObjectOfType<PowerUpController>().SubFromBalls(this);
             Destroy(gameObject);
         }
     }
