@@ -16,27 +16,26 @@ public class LevelController : MonoBehaviour
         scoreText = FindObjectOfType<ScoreUpdateText>();
     }
 
-    public void countBreakableBlocks()          // use this public function to automatyccly count block by calling method in Block.Start()
+    public void CountBreakableBlocks()          // use this public function to automatyccly count block by calling method in Block.Start()
     {
         breakableBlocks++;
     }
 
-    public void destroyedBreakableBlock()
+    public void DestoryedBreakableBlock()
     {
         breakableBlocks--;
         scoreText.UpdateScore();
 
-        LevelClear();
-
+        if (breakableBlocks <= 0)
+        {
+            LevelClear();
+        }
     }
 
     private void LevelClear()
     {
-        if (breakableBlocks <= 0)
-        {
-            FindObjectOfType<Ball>().FreezBall();
-            gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
-        }
+        FindObjectOfType<Ball>().FreezBall();
+        gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
     }
 
     public void PauseMenu()
@@ -44,6 +43,7 @@ public class LevelController : MonoBehaviour
         gameCanvas.GetComponent<Animator>().SetBool("isPaused", true);
         FindObjectOfType<Ball>().FreezBall();
     }
+
     public void UnPauseMenu()
     {
         gameCanvas.GetComponent<Animator>().SetBool("isPaused", false);

@@ -11,17 +11,11 @@ public class ScoreUpdateText : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = FindObjectOfType<GameSession>().GetCurrentScore().ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        scoreText.text = GameSession.CurrentScore.ToString();
     }
 
     public void UpdateScore()
     {
-        scoreText.text = FindObjectOfType<GameSession>().GetCurrentScore().ToString();
+        scoreText.text = GameSession.CurrentScore.ToString();
     }
 }

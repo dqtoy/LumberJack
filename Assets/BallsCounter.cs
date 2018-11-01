@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpController : MonoBehaviour {
+public class BallsCounter : MonoBehaviour {
 
     // class to contain all states for pickups in game (bools etc)
     // TODO - chainsaw changes, multiball, sickToPaddle
@@ -23,7 +23,6 @@ public class PowerUpController : MonoBehaviour {
         {
             balls.Add(ball);
         }
-        Debug.Log(balls.Count);
     }
 
     // Update is called once per frame
@@ -39,6 +38,5 @@ public class PowerUpController : MonoBehaviour {
     public void SubFromBalls(Ball ball)
     {
         balls.Remove(ball);
-        Debug.Log(balls.Count);
     }
 }

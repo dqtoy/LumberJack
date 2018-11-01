@@ -7,8 +7,10 @@ public class PowerUpLong : MonoBehaviour
 {
     [SerializeField] GameObject VFXforPickUp;
     [SerializeField] float vfxLifeTime = 1f;
-    [SerializeField] Vector3 _lengthMultiplier = new Vector3(0.5f, 0, 0);
+
+    [SerializeField] Vector3 lenghtMultipier = new Vector3(0.5f, 0, 0);
     [SerializeField] float timeOfPowerUp = 5f;
+
     [SerializeField] float maxLifeTime = 30f;
 
     private void Start()
@@ -31,7 +33,7 @@ public class PowerUpLong : MonoBehaviour
         PlayEffects();
 
         // Apply effect
-        player.transform.localScale += _lengthMultiplier;
+        player.transform.localScale += lenghtMultipier;
 
         //turn off rendering and collider
         DisabeVisualOfPowerUp();
@@ -40,7 +42,7 @@ public class PowerUpLong : MonoBehaviour
         yield return new WaitForSeconds(timeOfPowerUp);
 
         // revers
-        player.transform.localScale -= _lengthMultiplier;
+        player.transform.localScale -= lenghtMultipier;
 
         //remove object
         Destroy(gameObject);

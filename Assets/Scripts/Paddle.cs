@@ -7,15 +7,15 @@ public class Paddle : MonoBehaviour
 {
 
     // configuration parameters
-    [SerializeField] float min = 0.2f;
-    [SerializeField] float max = 6f;
+    [SerializeField] float minX = 0.2f;
+    [SerializeField] float maxX = 6f;
     [SerializeField] float screenWidthInUnits = 6.25f;
     [SerializeField] Slider moveSlider;
 
     [SerializeField] GameObject ball;
     [SerializeField] Vector3 startOffset = new Vector3 (0f,0.5f,0f);
 
-    [SerializeField] GameObject startButton;
+    [SerializeField] GameObject startButton;        // must be serialized and wired up something to make it active
     // Use this for initialization
 
     GameSession gameSession;
@@ -31,7 +31,7 @@ public class Paddle : MonoBehaviour
     {
         //float mousePosInUnits = Input.mousePosition.x / Screen.width * screenWidthInUnits;        // creating float for actual mouse position
         Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);
-        paddlePos.x = Mathf.Clamp(GetXPos(), min, max);
+        paddlePos.x = Mathf.Clamp(GetXPos(), minX, maxX);
         transform.position = paddlePos;
 
 

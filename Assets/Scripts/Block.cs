@@ -25,7 +25,7 @@ public class Block : MonoBehaviour
     private void Start()
     {
         levelController = FindObjectOfType<LevelController>();
-        levelController.countBreakableBlocks();
+        levelController.CountBreakableBlocks();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,15 +65,15 @@ public class Block : MonoBehaviour
         else
         {
             Debug.LogError("Block sprite is missing from array!" + gameObject);
-     }
+        }
     }
 
     private void DestroyBlock()
     {
+        levelController.DestoryedBreakableBlock();
         FindObjectOfType<BallAudio>().PlayDestroyBlock();
-        FindObjectOfType<GameSession>().AddPointsToScore(pointsPerBlockDestoryed);
+        GameSession.CurrentScore += pointsPerBlockDestoryed;
         SpawnPowerUp();
-        levelController.destroyedBreakableBlock();
         Destroy(gameObject);
     }
 

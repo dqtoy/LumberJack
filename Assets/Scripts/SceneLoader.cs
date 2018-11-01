@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour {
 
   
 
-    GameSession gameStatus;
+    GameSession gameSession;
 
     
 
@@ -56,11 +56,6 @@ public class SceneLoader : MonoBehaviour {
     public void LaunchFacebook()
     {
         Application.OpenURL("https://www.facebook.com/LongEarDevelopment/");
-    }
-
-    public void LaunchPayPal()
-    {
-        Application.OpenURL("https://www.paypal.me/longeardev");
     }
 
     public void QuitApplication()

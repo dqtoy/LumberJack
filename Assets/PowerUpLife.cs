@@ -6,7 +6,6 @@ public class PowerUpLife : MonoBehaviour
 {
     [SerializeField] GameObject VFXforPickUp;
     [SerializeField] float vfxLifeTime = 1f;
-    [SerializeField] float timeOfPowerUp = 5f;
     [SerializeField] float maxLifeTime = 30f;
 
     private void Start()
@@ -18,26 +17,19 @@ public class PowerUpLife : MonoBehaviour
     {
         if (collision.CompareTag("Paddle"))
         {
-            StartCoroutine(PickUp(collision));
+            PickUp();
         }
 
     }
 
-    IEnumerator PickUp(Collider2D player)
+    private void PickUp()
     {
         // spawn VFX at pickup
         PlayEffects();
-
         // Apply effect
         FindObjectOfType<GameSession>().AddLifePoint();
         //turn off rendering and collider
         DisabeVisualOfPowerUp();
-
-        // wait x time as coroutine
-        yield return new WaitForSeconds(timeOfPowerUp);
-
-        // revers
-
         //remove object
         Destroy(gameObject);
     }

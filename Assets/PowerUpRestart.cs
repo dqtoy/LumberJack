@@ -6,7 +6,9 @@ public class PowerUpRestart : MonoBehaviour {
 
     [SerializeField] GameObject VFXforPickUp;
     [SerializeField] float vfxLifeTime = 1f;
+
     [SerializeField] float timeOfPowerUp = 5f;
+
     [SerializeField] float maxLifeTime = 30f;
 
     private void Start()

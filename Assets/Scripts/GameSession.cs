@@ -11,20 +11,19 @@ public class GameSession : MonoBehaviour
     [SerializeField] bool isAutoplayEnabled;
 
     // state variable
-    [SerializeField] int currentScore = 0;
+    public static int CurrentScore { get; set; }
+
     [SerializeField] int lifes = 3;
 
-    List<Ball> balls = new List<Ball>();
-
-    private static GameSession gameStatus = null;
+    private static GameSession gameSession = null;
 
     private void Awake()
     {
-        if (gameStatus == null)
+        if (gameSession == null)
         {
-            gameStatus = this;
+            gameSession = this;
         }
-        else if (gameStatus != this)
+        else if (gameSession != this)
         {
             DestroyImmediate(gameObject);
         }
@@ -37,9 +36,9 @@ public class GameSession : MonoBehaviour
         Time.timeScale = gameSpeed;
     }
 
-    public void AddPointsToScore(int pointsPerBlockDestoryed)
+    public int GetCurrentLife()
     {
-        currentScore += pointsPerBlockDestoryed;
+        return lifes;
     }
 
     public void ReduceLifePoint()
@@ -51,16 +50,10 @@ public class GameSession : MonoBehaviour
             GameOver();
             return;
         }
-        
+
         FindObjectOfType<RemainsLifeDisplay>().UpdateLive(lifes);
 
 
-    }
-
-    private static void GameOver()
-    {
-        GameObject.FindGameObjectWithTag("GameCanvas").GetComponent<Animator>().SetTrigger("looseLevel");
-        return;
     }
 
     public void AddLifePoint()
@@ -69,19 +62,15 @@ public class GameSession : MonoBehaviour
         FindObjectOfType<RemainsLifeDisplay>().UpdateLive(lifes);
     }
 
-    public int GetCurrentLife()
+    private void GameOver()
     {
-        return lifes;
-    }
-
-    public int GetCurrentScore()
-    {
-        return currentScore;
+        GameObject.FindGameObjectWithTag("GameCanvas").GetComponent<Animator>().SetTrigger("looseLevel");
+        return;
     }
 
     public void ResetGame()
     {
-        currentScore = 0;
+        CurrentScore = 0;
         Destroy(gameObject);
     }
 
