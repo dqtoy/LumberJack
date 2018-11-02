@@ -22,6 +22,7 @@ public class Ball : MonoBehaviour
 
     // storing velocity before pause to use it later to unpause
     Vector2 tempVelocity;
+    [SerializeField] Vector2 minBallVelocity = new Vector2(1f, 6f);
 
     // bools for activete powerUps
     [SerializeField] bool isPowerUpRestartActive = false;
@@ -47,6 +48,11 @@ public class Ball : MonoBehaviour
         }
 
         ChangingSprites();
+
+        if(ballRigibody.velocity.magnitude < minBallVelocity.magnitude)
+        {
+            ballRigibody.velocity += minBallVelocity;
+        }
     }
 
     // use for checking if ball is out of playspace
@@ -66,6 +72,16 @@ public class Ball : MonoBehaviour
     {
         ballRigibody.velocity = launchForce;
         hasStarted = true;
+    }
+
+    public bool HasStarted()
+    {
+        return hasStarted;
+    }
+
+    public void SetHasStarted(bool state)
+    {
+        hasStarted = state;
     }
 
     private void LockBallToPaddle()

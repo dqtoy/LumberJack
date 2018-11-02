@@ -54,7 +54,6 @@ public class PowerUpRestart : MonoBehaviour {
 
     private void PlayEffects()
     {
-        GetComponent<AudioSource>().Play();
         GameObject vfx = Instantiate(VFXforPickUp, transform.position, transform.rotation);
         Destroy(vfx, vfxLifeTime);
     }

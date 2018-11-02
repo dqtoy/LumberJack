@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VFXforPickUp: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
   vfxLifeTime: 2
-  _lengthMultiplier: {x: 0.8, y: 0.2, z: 0}
+  lenghtMultipier: {x: 0.5, y: 0, z: 0}
   timeOfPowerUp: 5
   maxLifeTime: 30
 --- !u!212 &212968172373095458
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: c9475eed4bc74ac4ab19f5d32a5ad808, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

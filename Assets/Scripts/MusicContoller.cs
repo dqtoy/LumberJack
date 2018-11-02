@@ -17,7 +17,7 @@ public class MusicContoller : MonoBehaviour {
         }
         else if (gameStatus != this)
         {
-            DestroyImmediate(gameObject);
+            Destroy(gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
