@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1327434725041172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.15, y: 1.216, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7ed1551eb84d84e8e8ea4de4c6f35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 0.5
-  max: 5.75
+  minX: 0.2
+  maxX: 6
   screenWidthInUnits: 6.25
   moveSlider: {fileID: 0}
   ball: {fileID: 1330061121647828, guid: 07687564e2efd86459ad15f046be3f3f, type: 2}

@@ -1,13 +1,7 @@
-Animacja drwala na MainMenu++
-
-Scena opcji ++ 
-do rozwi¹zania - zapauzowanie sceny i powrót do gry!++
-
-Scena Mapy
-
-Opcja dotacji++
-
-Muzyka
-
-Stworzenie regulacji muzyki i efektów, high score level unlock
-
+scena mapy z poziomami do odblokowania
+Poprawiæ credits
+HighScore w mainmenu
+dodaæ przycisk powrotu do mainMenu w levelClear
+smoke effect for chainsaw
+k³ody do pozosota³ych poziomów
+poziomy
