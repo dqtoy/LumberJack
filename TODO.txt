@@ -1,7 +1,6 @@
-scena mapy z poziomami do odblokowania
-Poprawiæ credits
-HighScore w mainmenu
-dodaæ przycisk powrotu do mainMenu w levelClear
-smoke effect for chainsaw
-k³ody do pozosota³ych poziomów
-poziomy
+scena mapy z poziomami do odblokowania // fourth
+Poprawiæ credits // third
+HighScore w mainmenu // Second
+dodaæ przycisk powrotu do mainMenu w levelClear  First
+k³ody do pozosota³ych poziomów //fifth
+poziomy //end

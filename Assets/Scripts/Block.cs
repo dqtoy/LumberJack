@@ -27,7 +27,8 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SpawnVFX();
-        if (FindObjectOfType<Ball>().GetIsPowerUpChainsawActive())
+
+        if (collision.gameObject.GetComponent<Ball>().IsThisBallWithChainsaw)
         {
             DestroyBlock();
         }
@@ -78,14 +79,4 @@ public class Block : MonoBehaviour
         GameObject vfx = Instantiate(blockVFX, transform.position, transform.rotation);
         Destroy(vfx, vfxLiveTime);
     }
-
-    //private void SpawnPowerUp()
-    //{
-    //    int chance = UnityEngine.Random.Range(0, 11);
-    //    int index = UnityEngine.Random.Range(0, powerUps.Length);
-    //    if (chance >= tresholdForPowerUpSpawn)
-    //    {
-    //        Instantiate(powerUps[index], transform.position, transform.rotation);
-    //    }
-    //}
 }

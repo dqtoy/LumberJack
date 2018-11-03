@@ -197,10 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VFXforPickUp: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
-  vfxLifeTime: 2
-  lenghtMultipier: {x: 0.5, y: 0, z: 0}
-  timeOfPowerUp: 5
-  maxLifeTime: 30
+  vfxLifeTime: 1
+  maxLifeTime: 20
 --- !u!212 &212968172373095458
 SpriteRenderer:
   m_ObjectHideFlags: 1
