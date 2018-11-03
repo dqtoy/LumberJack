@@ -151,13 +151,8 @@ MonoBehaviour:
   sfxForPowerUps: {fileID: 8300000, guid: 1b258cc2680059b44a9e781ef6e81103, type: 3}
   sfxVolume: 0.8
   powerUps:
-  - {fileID: 1378942648397016, guid: bb3e8985c08be12469ab01864c521e58, type: 2}
-  - {fileID: 1378942648397016, guid: 7d1c70437cf3f9b499bedbe1d1acc01b, type: 2}
-  - {fileID: 1378942648397016, guid: 8e3aebd0189018143b3682903b224e03, type: 2}
   - {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736, type: 2}
-  - {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6, type: 2}
-  - {fileID: 1378942648397016, guid: 2aeb9737fc2cceb41976babf9d838a01, type: 2}
-  tresholdForPowerUpSpawn: 8
+  tresholdForPowerUpSpawn: 3
   powerUpChainsawTimeEffect: 10
   axeAndChansaw:
   - {fileID: 21300000, guid: 6e8108c619d20704d9a89b27d807f74a, type: 3}
@@ -165,3 +160,8 @@ MonoBehaviour:
   powerUpLongPaddleTimeEffect: 10
   paddleLengthMultiplier: {x: 0.5, y: 0, z: 0}
   powerUpRestartTimeEffect: 10
+  maxBallsInPlay: 3
+  offsetOfSpawningNewBalls: {x: 0.2, y: 0, z: 0}
+  minXPosForSpawn: 1
+  maxXPosForSpawn: 5.5
+  ball: {fileID: 0}

@@ -9,6 +9,7 @@ public class DestroyStone : MonoBehaviour {
 
 	public void Explosion()
     {
+        if(explosion == null) { return; }
         GetComponent<AudioSource>().PlayOneShot(explosion, volume);
         Destroy(gameObject, explosion.length);
     }

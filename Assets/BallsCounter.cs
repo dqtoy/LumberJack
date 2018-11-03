@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class BallsCounter : MonoBehaviour
 {
-
-    // class to contain all states for pickups in game (bools etc)
-    // TODO - chainsaw changes, multiball, sickToPaddle
-
     List<Ball> balls = new List<Ball>();
 
-
-
-    // Use this for initialization
     void Start()
     {
         CountBalls();
@@ -33,7 +26,7 @@ public class BallsCounter : MonoBehaviour
     {
         balls.Remove(ball);
 
-        if (balls.Count == 0)
+        if (balls.Count <= 0)
         {
             FindObjectOfType<GameSession>().ReduceLifePoint();
             FindObjectOfType<Paddle>().SpawnBall();

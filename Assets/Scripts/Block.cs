@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    // visual efect elements
     [SerializeField] GameObject blockVFX;
-    [SerializeField] float vfxLiveTime = 2f;
+    [SerializeField] float vfxLiveTime;
 
-    // damage processing - block dmg, what sprite etc.
-    [SerializeField] int timesHitAlready = 0; // serialized for debug
+    [SerializeField] int timesHitAlready;
     [SerializeField] Sprite[] hitSprites;
 
-
-    // backend elements - scores, counting etc.
     [SerializeField] int pointsPerBlockDestoryed = 10;
     LevelController levelController;
 
@@ -67,11 +63,26 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        levelController.DestoryedBreakableBlock();
-        FindObjectOfType<BallAudio>().PlayDestroyBlock();
-        GameSession.CurrentScore += pointsPerBlockDestoryed;
-        FindObjectOfType<PowerUpHandler>().SpawnPowerUp(transform.position);
+        SubstractBlocksInGameAndAddPoints();
+        TryToSpawnPowerUp();
+        PlaySFXForDestructionOfBlock();
         Destroy(gameObject);
+    }
+
+    private void TryToSpawnPowerUp()
+    {
+        FindObjectOfType<PowerUpHandler>().SpawnPowerUp(transform.position);
+    }
+
+    private static void PlaySFXForDestructionOfBlock()
+    {
+        FindObjectOfType<BallAudio>().PlayDestroyBlock();
+    }
+
+    private void SubstractBlocksInGameAndAddPoints()
+    {
+        levelController.DestoryedBreakableBlock();
+        GameSession.CurrentScore += pointsPerBlockDestoryed;
     }
 
     private void SpawnVFX()

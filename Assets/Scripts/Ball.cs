@@ -5,28 +5,23 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
-    //config parameters
-    Paddle paddle1;
+    Paddle paddle;
     Rigidbody2D ballRigibody;
 
     [SerializeField] Vector2 launchForce;
-    [SerializeField] float timeToRestoreVelocityAfterPause = 0.5f;
-
-    Vector2 paddleToBallVector;
-    public bool HasStarted { get; set; }
-
-    Vector2 tempVelocity;
     [SerializeField] Vector2 minBallVelocity;
-
+    Vector2 paddleToBallVector;
+    Vector2 tempVelocity;
+    [SerializeField] float timeToRestoreVelocityAfterPause = 0.5f;
+    public bool HasStarted { get; set; }
     public bool IsThisBallWithChainsaw { get; set; }
 
     void Start()
     {
         HasStarted = false;
-        paddle1 = FindObjectOfType<Paddle>();
+        paddle = FindObjectOfType<Paddle>();
         ballRigibody = GetComponent<Rigidbody2D>();
-        paddleToBallVector = transform.position - paddle1.transform.position;
+        paddleToBallVector = transform.position - paddle.transform.position;
     }
 
     void Update()
@@ -36,7 +31,7 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
         }
 
-        if(ballRigibody.velocity.magnitude < minBallVelocity.magnitude)
+        if (ballRigibody.velocity.magnitude < minBallVelocity.magnitude)
         {
             ballRigibody.velocity += minBallVelocity;
         }
@@ -65,7 +60,7 @@ public class Ball : MonoBehaviour
     }
     private void LockBallToPaddle()
     {
-        Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
+        Vector2 paddlePos = new Vector2(paddle.transform.position.x, paddle.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
     }
 
