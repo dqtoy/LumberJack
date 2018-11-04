@@ -55,8 +55,8 @@ public class Ball : MonoBehaviour
 
     public void LaunchBall()
     {
-        ballRigibody.velocity = launchForce;
         HasStarted = true;
+        ballRigibody.velocity = launchForce;
     }
     private void LockBallToPaddle()
     {
@@ -78,6 +78,10 @@ public class Ball : MonoBehaviour
     {
         ballRigibody.velocity = tempVelocity;
     }
+    public Vector2 CurrentVelocity()
+    {
+        return ballRigibody.velocity;
+    }
 
     public void WiatForResetBallPostion()
     {
@@ -88,9 +92,6 @@ public class Ball : MonoBehaviour
         HasStarted = false;
         FindObjectOfType<Paddle>().SetActiveStartButton();
     }
-
-
-
 
 }
 

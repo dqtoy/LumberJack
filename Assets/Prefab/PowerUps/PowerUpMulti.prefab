@@ -105,7 +105,7 @@ MonoBehaviour:
   ball: {fileID: 1330061121647828, guid: 07687564e2efd86459ad15f046be3f3f, type: 2}
   offset: {x: 0.2, y: 0, z: 0}
   minX: 1
-  maxX: 5
+  maxX: 5.5
   maxBallsInPlay: 3
 --- !u!212 &212968172373095458
 SpriteRenderer:

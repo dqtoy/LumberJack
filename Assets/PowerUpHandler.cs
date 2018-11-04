@@ -116,63 +116,41 @@ public class PowerUpHandler : MonoBehaviour
         IsPowerUpRestartActive = false;
     }
 
-    public void ActivePowerUpMultiball()
-    {
-        FindObjectOfType<BallsCounter>().CountBalls();
-        if (FindObjectOfType<Ball>() == null) { Debug.Log("Multi canel: no ball"); return; }
-        if (IfAllBallsHasStarted()) { Debug.Log("Multi canel: Not all ball started"); return; }
-        if (FindObjectOfType<BallsCounter>().BallsInPlay() >= maxBallsInPlay) { Debug.Log("Multi canel: max ball in play"); return; }
+    //public void ActivePowerUpMultiball()
+    //{
+    //    FindObjectOfType<BallsCounter>().CountBalls();
+    //    if (FindObjectOfType<Ball>() == null) { Debug.Log("Multi canel: no ball"); return; }
+    //    if (IfAllBallsHasStarted()) { Debug.Log("Multi canel: Not all ball started"); return; }
+    //    if (FindObjectOfType<BallsCounter>().BallsInPlay() >= maxBallsInPlay) { Debug.Log("Multi canel: max ball in play"); return; }
+    //}
 
-        //// get info from old ball
-        //var originalBall = FindObjectOfType<Ball>();
-        //Vector3 originalPosition = originalBall.GetComponent<Transform>().transform.position;
-        //Vector2 originalVelocity = originalBall.GetComponent<Rigidbody2D>().velocity;
+    //private bool IfAllBallsHasStarted()
+    //{
+    //    Ball[] ballsInGameplay = FindObjectsOfType<Ball>();
+    //    foreach (var ball in ballsInGameplay)
+    //    {
+    //        if (ball.HasStarted)
+    //        {
+    //            return false;
+    //        }
+    //    }
+    //    return true;
+    //}
 
-        //SpawnSecondBall(NewBallPos(originalPosition), originalVelocity);
+    ////private void SpawnSecondBall(Vector3 newBallPos, Vector2 originVelocity)
+    ////{
+    ////    GameObject positiveOffsetBallSpawn = Instantiate(ball, newBallPos + offsetOfSpawningNewBalls, Quaternion.identity);
+    ////}
 
-        //SpwanThirdBall(NewBallPos(originalPosition), originalVelocity);
+    ////private void SpwanThirdBall(Vector3 newBallPos, Vector2 originVelocity)
+    ////{
+    ////    GameObject negativeOffsetBallSpawn = Instantiate(ball, newBallPos - offsetOfSpawningNewBalls, Quaternion.identity);
+    ////}
 
-        //FindObjectOfType<BallsCounter>().CountBalls();
-
-
-
-    }
-
-    private bool IfAllBallsHasStarted()
-    {
-        Ball[] ballsInGameplay = FindObjectsOfType<Ball>();
-        foreach (var ball in ballsInGameplay)
-        {
-            if (ball.HasStarted)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private void SpawnSecondBall(Vector3 newBallPos, Vector2 originVelocity)
-    {
-        GameObject positiveOffsetBallSpawn = Instantiate(ball, newBallPos + offsetOfSpawningNewBalls, Quaternion.identity);
-        SetupStartParametersForSpawnedBall(positiveOffsetBallSpawn, originVelocity);
-    }
-
-    private void SpwanThirdBall(Vector3 newBallPos, Vector2 originVelocity)
-    {
-        GameObject negativeOffsetBallSpawn = Instantiate(ball, newBallPos - offsetOfSpawningNewBalls, Quaternion.identity);
-        SetupStartParametersForSpawnedBall(negativeOffsetBallSpawn, originVelocity);
-    }
-
-    private void SetupStartParametersForSpawnedBall(GameObject ball, Vector2 velocity)
-    {
-        ball.GetComponent<Ball>().HasStarted = true;
-        ball.GetComponent<Rigidbody2D>().velocity = velocity;
-    }
-
-    private Vector3 NewBallPos(Vector3 originPostion)
-    {
-        float clampedXpos = Mathf.Clamp(originPostion.x + offsetOfSpawningNewBalls.x, minXPosForSpawn, maxXPosForSpawn);
-        Vector3 newBallPos = new Vector3(clampedXpos, originPostion.y, originPostion.z);
-        return newBallPos;
-    }
+    ////private Vector3 NewBallPos(Vector3 originPostion)
+    ////{
+    ////    float clampedXpos = Mathf.Clamp(originPostion.x + offsetOfSpawningNewBalls.x, minXPosForSpawn, maxXPosForSpawn);
+    ////    Vector3 newBallPos = new Vector3(clampedXpos, originPostion.y, originPostion.z);
+    ////    return newBallPos;
+    ////}
 }
