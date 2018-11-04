@@ -58,7 +58,7 @@ public class PowerUpHandler : MonoBehaviour
         IsPowerUpChainsawActive = true;
         ChangingSpriteFormAxeToChainsaw();
         changedBall.IsThisBallWithChainsaw = true;
-        FindObjectOfType<BallAudio>().PlayChainsawAudio();
+        FindObjectOfType<SFXController>().PlayChainsawAudio();
 
         yield return new WaitForSeconds(powerUpChainsawTimeEffect);
 

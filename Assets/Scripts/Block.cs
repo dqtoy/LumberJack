@@ -63,7 +63,7 @@ public class Block : MonoBehaviour
     private void DestroyBlock()
     {
         levelController.DestoryedBreakableBlock();
-        FindObjectOfType<BallAudio>().PlayDestroyBlock();
+        FindObjectOfType<SFXController>().PlayDestroyBlock();
         GameSession.CurrentScore += pointsPerBlockDestoryed;
         FindObjectOfType<PowerUpHandler>().SpawnPowerUp(transform.position);
         Destroy(gameObject);

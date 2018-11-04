@@ -6,12 +6,13 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     //TODO find a way to limit max ball speed
-    
+
     Paddle paddle;
     Rigidbody2D ballRigibody;
 
     [SerializeField] Vector2 launchForce;
     [SerializeField] Vector2 minBallVelocity;
+    [SerializeField] Vector2 maxBallVelocity;
     Vector2 paddleToBallVector;
     Vector2 tempVelocity;
 
@@ -46,6 +47,10 @@ public class Ball : MonoBehaviour
         {
             ballRigibody.velocity += minBallVelocity;
         }
+        else if (ballRigibody.velocity.magnitude > maxBallVelocity.magnitude)
+        {
+            ballRigibody.velocity -= minBallVelocity;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -59,6 +64,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        FindObjectOfType<SFXController>().PlaySFX(collision);
         if (FindObjectOfType<PowerUpHandler>().IsPowerUpRestartActive && collision.gameObject.CompareTag("Paddle"))
         {
             ResetBallPosition();

@@ -5,22 +5,20 @@ using UnityEngine;
 public class BallAudio : MonoBehaviour
 {
 
-    [SerializeField] AudioClip[] crackSound = new AudioClip[4];
-    [Range(0, 1)] [SerializeField] float crackVolume = 1f;
+    [SerializeField] AudioClip[] crackSound;
+    [Range(0, 1)] [SerializeField] float crackVolume;
     [SerializeField] AudioClip blockDestory;
-    [Range(0, 1)] [SerializeField] float destoryVolume = 1f;
+    [Range(0, 1)] [SerializeField] float destoryVolume;
     [SerializeField] AudioClip bounceSound;
-    [Range(0, 1)] [SerializeField] float bounceVolume = 0.3f;
+    [Range(0, 1)] [SerializeField] float bounceVolume;
     [SerializeField] AudioClip stoneSound;
-    [Range(0, 1)] [SerializeField] float stoneVolume = 0.3f;
+    [Range(0, 1)] [SerializeField] float stoneVolume;
     [SerializeField] AudioClip chainsawSound;
-    [Range(0, 1)] [SerializeField] float chainsawVolume = 0.5f;
+    [Range(0, 1)] [SerializeField] float chainsawVolume;
 
 
     AudioSource ballAudio;
 
-
-    // Use this for initialization
     void Start()
     {
         ballAudio = GetComponent<AudioSource>();
@@ -44,14 +42,14 @@ public class BallAudio : MonoBehaviour
         }
     }
 
-    public void PlayChainsawAudio()
-    {
-        ballAudio.PlayOneShot(chainsawSound, chainsawVolume);
-    }
+    //public void PlayChainsawAudio()
+    //{
+    //    ballAudio.PlayOneShot(chainsawSound, chainsawVolume);
+    //}
 
-    public void PlayDestroyBlock()
-    {
-        ballAudio.PlayOneShot(blockDestory, destoryVolume);
-    }
+    //public void PlayDestroyBlock()
+    //{
+    //    ballAudio.PlayOneShot(blockDestory, destoryVolume);
+    //}
 
 }
