@@ -27,7 +27,7 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SpawnVFX();
-        if (FindObjectOfType<Ball>().GetIsPowerUpChainsawActive())
+        if (FindObjectOfType<Ball>().IsThisBallWithChainsaw)
         {
             DestroyBlock();
         }

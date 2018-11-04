@@ -8,8 +8,12 @@ public class PowerUpHandler : MonoBehaviour
     //spawning powerUps
     [SerializeField] AudioClip sfxForPowerUps;
     [Range(0, 1)] [SerializeField] float sfxVolume;
-    [SerializeField] GameObject[] powerUps = new GameObject[1];
-    [Range(0, 10)] [SerializeField] int tresholdForPowerUpSpawn = 7;
+    [SerializeField] GameObject[] powerUps;
+    [Range(0, 10)] [SerializeField] int tresholdForPowerUpSpawn;
+
+    public bool IsPowerUpChainsawActive { get; set; }
+    [SerializeField] float powerUpChainsawTimeEffect;
+    [SerializeField] Sprite[] axeAndChainsaw;
 
 
     public void SpawnPowerUp(Vector3 position)
@@ -22,4 +26,55 @@ public class PowerUpHandler : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(sfxForPowerUps, sfxVolume);
         }
     }
+
+    public void PowerUpLife()
+    {
+        FindObjectOfType<GameSession>().AddLifePoint();
+    }
+
+    public void ActiveChainsawInHandler()
+    {
+        StartCoroutine(PowerUpChainsaw());
+    }
+    IEnumerator PowerUpChainsaw()
+    {
+        var changedBall = FindObjectOfType<Ball>();
+
+        IsPowerUpChainsawActive = true;
+        ChangingSpriteFormAxeToChainsaw();
+        changedBall.IsThisBallWithChainsaw = true;
+        FindObjectOfType<BallAudio>().PlayChainsawAudio();
+
+        yield return new WaitForSeconds(powerUpChainsawTimeEffect);
+
+        IsPowerUpChainsawActive = false;
+        if (changedBall != null)
+        {
+            changedBall.IsThisBallWithChainsaw = false;
+        }
+        ChangingSpriteFormAxeToChainsaw();
+    }
+    private void ChangingSpriteFormAxeToChainsaw()
+    {
+        if (IsPowerUpChainsawActive)
+        {
+
+            SwapSpriteToChainsaw();
+        }
+        else
+        {
+            SwapSpriteToAxe();
+        }
+    }
+    private void SwapSpriteToAxe()
+    {
+        FindObjectOfType<Ball>().GetComponent<SpriteRenderer>().sprite = axeAndChainsaw[0];
+    }
+    private void SwapSpriteToChainsaw()
+    {
+        FindObjectOfType<Ball>().GetComponent<SpriteRenderer>().sprite = axeAndChainsaw[1];
+    }
+
+
+
 }

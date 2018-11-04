@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour
 
     // bools for activete powerUps
     [SerializeField] bool isPowerUpRestartActive = false;
-    [SerializeField] bool isPowerUpChainsawActive = false;
+    public bool IsThisBallWithChainsaw { get; set; }
     // chainsaw sprite swap array
     [SerializeField] Sprite[] balls = new Sprite[2];
 
@@ -46,7 +46,7 @@ public class Ball : MonoBehaviour
             LockBallToPaddle();
         }
 
-        ChangingSprites();
+        //ChangingSprites();
 
         if (ballRigibody.velocity.magnitude < minBallVelocity.magnitude)
         {
@@ -140,37 +140,37 @@ public class Ball : MonoBehaviour
 
     // configuratin and metods for ChainsawPowetUp
 
-    public void SetIsPowerUpChainsawActive(bool state)
-    {
-        isPowerUpChainsawActive = state;
-    }
+    //public void SetIsPowerUpChainsawActive(bool state)
+    //{
+    //    isPowerUpChainsawActive = state;
+    //}
 
-    public bool GetIsPowerUpChainsawActive()
-    {
-        return isPowerUpChainsawActive;
-    }
+    //public bool GetIsPowerUpChainsawActive()
+    //{
+    //    return isPowerUpChainsawActive;
+    //}
 
-    private void ChangingSprites()
-    {
-        if (isPowerUpChainsawActive)
-        {
+    //private void ChangingSprites()
+    //{
+    //    if (isPowerUpChainsawActive)
+    //    {
 
-            SwapSpriteToChainsaw();
-        }
-        else
-        {
-            SwapSpriteToAxe();
-        }
-    }
+    //        SwapSpriteToChainsaw();
+    //    }
+    //    else
+    //    {
+    //        SwapSpriteToAxe();
+    //    }
+    //}
 
-    private void SwapSpriteToAxe()
-    {
-        GetComponent<SpriteRenderer>().sprite = balls[0];
-    }
+    //private void SwapSpriteToAxe()
+    //{
+    //    GetComponent<SpriteRenderer>().sprite = balls[0];
+    //}
 
-    private void SwapSpriteToChainsaw()
-    {
-        GetComponent<SpriteRenderer>().sprite = balls[1];
-    }
+    //private void SwapSpriteToChainsaw()
+    //{
+    //    GetComponent<SpriteRenderer>().sprite = balls[1];
+    //}
 }
 
