@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    // visual efect elements
     [SerializeField] GameObject blockVFX;
     [SerializeField] float vfxLiveTime = 2f;
 
-    // damage processing - block dmg, what sprite etc.
-    [SerializeField] int timesHitAlready = 0; // serialized for debug
+    [SerializeField] int timesHitAlready = 0;
     [SerializeField] Sprite[] hitSprites;
 
-
-    // backend elements - scores, counting etc.
     [SerializeField] int pointsPerBlockDestoryed = 10;
     LevelController levelController;
 
@@ -78,14 +74,4 @@ public class Block : MonoBehaviour
         GameObject vfx = Instantiate(blockVFX, transform.position, transform.rotation);
         Destroy(vfx, vfxLiveTime);
     }
-
-    //private void SpawnPowerUp()
-    //{
-    //    int chance = UnityEngine.Random.Range(0, 11);
-    //    int index = UnityEngine.Random.Range(0, powerUps.Length);
-    //    if (chance >= tresholdForPowerUpSpawn)
-    //    {
-    //        Instantiate(powerUps[index], transform.position, transform.rotation);
-    //    }
-    //}
 }

@@ -102,7 +102,7 @@ MonoBehaviour:
   VFXforPickUp: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
   vfxLifeTime: 1
   timeOfPowerUp: 10
-  maxLifeTime: 30
+  maxLifeTime: 20
 --- !u!212 &212968172373095458
 SpriteRenderer:
   m_ObjectHideFlags: 1

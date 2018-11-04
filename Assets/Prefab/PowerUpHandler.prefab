@@ -157,3 +157,6 @@ MonoBehaviour:
   axeAndChainsaw:
   - {fileID: 21300000, guid: 6e8108c619d20704d9a89b27d807f74a, type: 3}
   - {fileID: 21300000, guid: f44892f271caa8d409785706f4296b2c, type: 3}
+  paddleLengthMultiplier: {x: 0.5, y: 0, z: 0}
+  powerUpLongPaddleTimeEffect: 10
+  powerUpRestartTimeEffect: 10

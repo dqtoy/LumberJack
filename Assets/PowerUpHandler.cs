@@ -15,6 +15,14 @@ public class PowerUpHandler : MonoBehaviour
     [SerializeField] float powerUpChainsawTimeEffect;
     [SerializeField] Sprite[] axeAndChainsaw;
 
+    [SerializeField] Vector3 paddleLengthMultiplier;
+    [SerializeField] float powerUpLongPaddleTimeEffect;
+
+    public bool IsPowerUpRestartActive { get; set; }
+    [SerializeField] float powerUpRestartTimeEffect;
+
+
+
 
     public void SpawnPowerUp(Vector3 position)
     {
@@ -73,6 +81,36 @@ public class PowerUpHandler : MonoBehaviour
     private void SwapSpriteToChainsaw()
     {
         FindObjectOfType<Ball>().GetComponent<SpriteRenderer>().sprite = axeAndChainsaw[1];
+    }
+
+    public void ActivePowerUpLong(Collider2D collider)
+    {
+        StartCoroutine(PowerUpLong(collider));
+    }
+    IEnumerator PowerUpLong(Collider2D paddle)
+    {
+        paddle.transform.localScale += paddleLengthMultiplier;
+        yield return new WaitForSeconds(powerUpLongPaddleTimeEffect);
+        paddle.transform.localScale -= paddleLengthMultiplier;
+    }
+
+    public void ActivePowerUpExplosion()
+    {
+        if (FindObjectOfType<DestroyStone>() == null) { return; }
+        FindObjectOfType<DestroyStone>().GetComponent<Animator>().SetTrigger("DestroyStone");
+
+    }
+
+    public void ActivePowerUpRestart()
+    {
+        StartCoroutine(PowerUpRestart());
+    }
+
+    IEnumerator PowerUpRestart()
+    {
+        IsPowerUpRestartActive = true;
+        yield return new WaitForSeconds(powerUpRestartTimeEffect);
+        IsPowerUpRestartActive = false;
     }
 
 

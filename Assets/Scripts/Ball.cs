@@ -130,7 +130,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isPowerUpRestartActive && collision.gameObject.CompareTag("Paddle"))
+        if (FindObjectOfType<PowerUpHandler>().IsPowerUpRestartActive && collision.gameObject.CompareTag("Paddle"))
 
         {
             ResetBallPosition();
