@@ -71,6 +71,7 @@ public class Ball : MonoBehaviour
     {
         ballRigibody.velocity = launchForce;
         hasStarted = true;
+        FindObjectOfType<Paddle>().SetDeActiveStartButton();
     }
 
     public bool HasStarted()
@@ -123,10 +124,10 @@ public class Ball : MonoBehaviour
 
     // setting RestertPowerUp if collision - reset
 
-    public void SetIsPowerUpRestartActive(bool state)
-    {
-        isPowerUpRestartActive = state;
-    }
+    //public void SetIsPowerUpRestartActive(bool state)
+    //{
+    //    isPowerUpRestartActive = state;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -137,40 +138,5 @@ public class Ball : MonoBehaviour
         }
 
     }
-
-    // configuratin and metods for ChainsawPowetUp
-
-    //public void SetIsPowerUpChainsawActive(bool state)
-    //{
-    //    isPowerUpChainsawActive = state;
-    //}
-
-    //public bool GetIsPowerUpChainsawActive()
-    //{
-    //    return isPowerUpChainsawActive;
-    //}
-
-    //private void ChangingSprites()
-    //{
-    //    if (isPowerUpChainsawActive)
-    //    {
-
-    //        SwapSpriteToChainsaw();
-    //    }
-    //    else
-    //    {
-    //        SwapSpriteToAxe();
-    //    }
-    //}
-
-    //private void SwapSpriteToAxe()
-    //{
-    //    GetComponent<SpriteRenderer>().sprite = balls[0];
-    //}
-
-    //private void SwapSpriteToChainsaw()
-    //{
-    //    GetComponent<SpriteRenderer>().sprite = balls[1];
-    //}
 }
 

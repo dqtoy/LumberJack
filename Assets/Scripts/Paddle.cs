@@ -64,4 +64,9 @@ public class Paddle : MonoBehaviour
     {
         startButton.SetActive(true);
     }
+
+    public void SetDeActiveStartButton()
+    {
+        startButton.SetActive(false);
+    }
 }

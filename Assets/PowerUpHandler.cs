@@ -22,7 +22,10 @@ public class PowerUpHandler : MonoBehaviour
     [SerializeField] float powerUpRestartTimeEffect;
 
 
-
+    private void Start()
+    {
+        IsPowerUpRestartActive = false;
+    }
 
     public void SpawnPowerUp(Vector3 position)
     {

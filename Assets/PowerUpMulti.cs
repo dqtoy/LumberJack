@@ -72,15 +72,19 @@ public class PowerUpMulti : MonoBehaviour
     private void SpawnSecondBall(Vector3 newBallPos, Vector2 originVelocity)
     {
         GameObject positiveOffsetBallSpawn = Instantiate(ball, newBallPos + offset, Quaternion.identity);
-        positiveOffsetBallSpawn.GetComponent<Ball>().SetHasStarted(true);
-        positiveOffsetBallSpawn.GetComponent<Rigidbody2D>().velocity = originVelocity;
+        SetupNewAxe(positiveOffsetBallSpawn, originVelocity);
     }
 
     private void SpwanThirdBall(Vector3 newBallPos, Vector2 originVelocity)
     {
         GameObject negativeOffsetBallSpawn = Instantiate(ball, newBallPos - offset, Quaternion.identity);
-        negativeOffsetBallSpawn.GetComponent<Ball>().SetHasStarted(true);
-        negativeOffsetBallSpawn.GetComponent<Rigidbody2D>().velocity = originVelocity;
+        SetupNewAxe(negativeOffsetBallSpawn, originVelocity);
+    }
+
+    private void SetupNewAxe(GameObject spawnedAxe, Vector2 originVelocity)
+    {
+        spawnedAxe.GetComponent<Ball>().SetHasStarted(true);
+        spawnedAxe.GetComponent<Rigidbody2D>().velocity = originVelocity;
     }
 
     private bool IfAllBallsHasStarted()
