@@ -31,28 +31,20 @@ public class PowerUpMulti : MonoBehaviour
             PickUp();
             Destroy(gameObject, vfxLifeTime);
         }
-
     }
 
     private void PickUp()
     {
         if (FindObjectOfType<Ball>() == null) { Destroy(gameObject); return; }
-
         if (IfAllBallsHasStarted()) { Destroy(gameObject); return; }
-
-        if (FindObjectOfType<BallsCounter>().BallsInPlay() >= maxBallsInPlay) { Destroy(gameObject); return; }
-
+        if (FindObjectOfType<BallsCounter>().GetBallsInPlay() >= maxBallsInPlay) { Destroy(gameObject); return; }
         Vector2 originVelocity = FindObjectOfType<Ball>().GetComponent<Rigidbody2D>().velocity;
-
-        SpawnSecondBall(NewBallPos(), originVelocity);
-
-        SpwanThirdBall(NewBallPos(), originVelocity);
-
+        SpawnSecondBall(CalculatedNewBallPosition(), originVelocity);
+        SpwanThirdBall(CalculatedNewBallPosition(), originVelocity);
         FindObjectOfType<BallsCounter>().CountBalls();
-
     }
 
-    private Vector3 NewBallPos()
+    private Vector3 CalculatedNewBallPosition()
     {
         Vector3 newBallPosRaw = FindObjectOfType<Ball>().GetComponent<Transform>().transform.position;
         float clampedXpos = Mathf.Clamp(newBallPosRaw.x + offset.x, minX, maxX);
@@ -81,7 +73,6 @@ public class PowerUpMulti : MonoBehaviour
     private bool IfAllBallsHasStarted()
     {
         Ball[] ballsInGameplay = FindObjectsOfType<Ball>();
-
         foreach (var ball in ballsInGameplay)
         {
             if (ball.HasStarted())

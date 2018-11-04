@@ -308,11 +308,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: ball
-      value: 
-      objectReference: {fileID: 936642941}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f37a0be364f5604b9e338896a638d33, type: 2}
   m_IsPrefabAsset: 0
@@ -504,11 +499,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a9681466f6cc245b1b1358db6b2fb0, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &936642941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1330061121647828, guid: 07687564e2efd86459ad15f046be3f3f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1971075166}
 --- !u!1001 &1031314234
 Prefab:
   m_ObjectHideFlags: 0
@@ -1382,16 +1372,6 @@ Prefab:
     - target: {fileID: 4752820976439794, guid: 07687564e2efd86459ad15f046be3f3f, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114092548649912330, guid: 07687564e2efd86459ad15f046be3f3f,
-        type: 2}
-      propertyPath: minBallVelocity.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114092548649912330, guid: 07687564e2efd86459ad15f046be3f3f,
-        type: 2}
-      propertyPath: minBallVelocity.y
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07687564e2efd86459ad15f046be3f3f, type: 2}

@@ -44,6 +44,11 @@ public class PowerUpHandler : MonoBehaviour
 
     public void ActiveChainsawInHandler()
     {
+        if (FindObjectOfType<Ball>() == null)
+        {
+            Debug.LogWarning("No ball exist");
+            return;
+        }
         StartCoroutine(PowerUpChainsaw());
     }
     IEnumerator PowerUpChainsaw()
@@ -98,9 +103,12 @@ public class PowerUpHandler : MonoBehaviour
 
     public void ActivePowerUpExplosion()
     {
-        if (FindObjectOfType<DestroyStone>() == null) { return; }
+        if (FindObjectOfType<DestroyStone>() == null)
+        {
+            Debug.Log("No stone to destory");
+            return;
+        }
         FindObjectOfType<DestroyStone>().GetComponent<Animator>().SetTrigger("DestroyStone");
-
     }
 
     public void ActivePowerUpRestart()
