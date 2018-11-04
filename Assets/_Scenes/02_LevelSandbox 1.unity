@@ -276,11 +276,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4581253061356054, guid: 5f37a0be364f5604b9e338896a638d33, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -315,45 +310,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
         type: 2}
-      propertyPath: powerUps.Array.data[1]
+      propertyPath: ball
       value: 
-      objectReference: {fileID: 1378942648397016, guid: 2aeb9737fc2cceb41976babf9d838a01,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.data[2]
-      value: 
-      objectReference: {fileID: 1378942648397016, guid: 7d1c70437cf3f9b499bedbe1d1acc01b,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.data[3]
-      value: 
-      objectReference: {fileID: 1378942648397016, guid: 8e3aebd0189018143b3682903b224e03,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.data[4]
-      value: 
-      objectReference: {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.data[5]
-      value: 
-      objectReference: {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: powerUps.Array.data[0]
-      value: 
-      objectReference: {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736,
-        type: 2}
-    - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
-        type: 2}
-      propertyPath: tresholdForPowerUpSpawn
-      value: 6
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 936642941}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f37a0be364f5604b9e338896a638d33, type: 2}
   m_IsPrefabAsset: 0
@@ -545,6 +504,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a9681466f6cc245b1b1358db6b2fb0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &936642941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1330061121647828, guid: 07687564e2efd86459ad15f046be3f3f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1971075166}
 --- !u!1001 &1031314234
 Prefab:
   m_ObjectHideFlags: 0

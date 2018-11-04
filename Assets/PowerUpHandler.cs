@@ -21,6 +21,12 @@ public class PowerUpHandler : MonoBehaviour
     public bool IsPowerUpRestartActive { get; set; }
     [SerializeField] float powerUpRestartTimeEffect;
 
+    [SerializeField] int maxBallsInPlay;
+    [SerializeField] GameObject ball;
+    [SerializeField] Vector3 offsetForSpawningBall;
+    [SerializeField] float minXForSpawn;
+    [SerializeField] float maxXForSpawn;
+
 
     private void Start()
     {
@@ -108,7 +114,6 @@ public class PowerUpHandler : MonoBehaviour
     {
         StartCoroutine(PowerUpRestart());
     }
-
     IEnumerator PowerUpRestart()
     {
         IsPowerUpRestartActive = true;
@@ -116,6 +121,40 @@ public class PowerUpHandler : MonoBehaviour
         IsPowerUpRestartActive = false;
     }
 
+    //public void PowerUpMultiBall()
+    //{
+    //    if (FindObjectOfType<Ball>() == null) { return; }
 
+    //    if (IfAllBallsHasStarted()) { return; }
 
+    //    if (FindObjectOfType<BallsCounter>().BallsInPlay() >= maxBallsInPlay) { return; }
+
+    //    Ball oldBall = FindObjectOfType<Ball>();
+    //    Vector3 oldVelocity = oldBall.GetComponent<Rigidbody2D>().velocity;
+    //    bool oldHasStarted = oldBall.GetComponent<Ball>().HasStarted();
+
+    //    Instantiate(ball, oldBall.transform.position + offsetForSpawningBall, Quaternion.identity);
+    //    Instantiate(ball, oldBall.transform.position - offsetForSpawningBall, Quaternion.identity);
+
+    //    Ball[] balls = FindObjectsOfType<Ball>();
+    //    foreach (var ball in balls)
+    //    {
+    //        ball.GetComponent<Ball>().SetHasStarted(oldHasStarted);
+    //        ball.GetComponent<Rigidbody2D>().velocity = oldVelocity;
+    //    }
+    //}
+
+    //private bool IfAllBallsHasStarted()
+    //{
+    //    Ball[] ballsInGameplay = FindObjectsOfType<Ball>();
+
+    //    foreach (var ball in ballsInGameplay)
+    //    {
+    //        if (ball.HasStarted())
+    //        {
+    //            return false;
+    //        }
+    //    }
+    //    return true;
+    //}
 }
