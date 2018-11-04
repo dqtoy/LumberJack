@@ -22,14 +22,13 @@ public class Ball : MonoBehaviour
 
     // storing velocity before pause to use it later to unpause
     Vector2 tempVelocity;
-    [SerializeField] Vector2 minBallVelocity = new Vector2(1f, 6f);
+    [SerializeField] Vector2 minBallVelocity;
 
     // bools for activete powerUps
     [SerializeField] bool isPowerUpRestartActive = false;
     [SerializeField] bool isPowerUpChainsawActive = false;
     // chainsaw sprite swap array
     [SerializeField] Sprite[] balls = new Sprite[2];
-    [SerializeField] GameObject smoke;
 
     // Use this for initialization
     void Start()
@@ -167,19 +166,11 @@ public class Ball : MonoBehaviour
     private void SwapSpriteToAxe()
     {
         GetComponent<SpriteRenderer>().sprite = balls[0];
-        ActiveSmoke(false);
     }
 
     private void SwapSpriteToChainsaw()
     {
         GetComponent<SpriteRenderer>().sprite = balls[1];
-        ActiveSmoke(true);
-    }
-
-    private void ActiveSmoke(bool state)
-    {
-        var emmison = GetComponentInChildren<ParticleSystem>().emission;
-        emmison.enabled = state;
     }
 }
 
