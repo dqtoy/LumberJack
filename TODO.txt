@@ -1,7 +1,4 @@
 scena mapy z poziomami do odblokowania
 Poprawiæ credits
-HighScore w mainmenu
-dodaæ przycisk powrotu do mainMenu w levelClear
-smoke effect for chainsaw
-k³ody do pozosota³ych poziomów
+poprawic scene fina³ow¹
 poziomy
