@@ -2,3 +2,13 @@ scena mapy z poziomami do odblokowania
 Poprawiæ credits
 poprawic scene fina³ow¹
 poziomy
+
+// rys fabularny po wersji testowej:
+
+orzel zajeba³ kanapkê - trzeba ja odzyskaæ
+dodatkowo:
+w menu g³ownym orze³ z kanapk¹ nad drwalem
+animacja pod rys fabularny...?? / wyjasnienie na poczatku gry jako panel do trun off
+orze³ jako wskaŸnik posiomów na mapie
+orze³ z kanapk¹ na ka¿dej fina³owej scenie poziomu odlatuj¹cy gdy zostanie jedna k³oda
+ostatni poziom to polowanie na or³a (10 hit) po zabiciu wypuszcza kanapkê
