@@ -102,7 +102,6 @@ public class PowerUpHandler : MonoBehaviour
     {
         StartCoroutine(PowerUpRestart(paddle));
     }
-
     IEnumerator PowerUpRestart(Collider2D player)
     {
         IsPowerUpRestartActive = true;
