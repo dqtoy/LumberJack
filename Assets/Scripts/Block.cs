@@ -69,7 +69,6 @@ public class Block : MonoBehaviour
     private void InfromOtherScriptsBeforDestroing()
     {
         levelController.DestoryedBreakableBlock();
-        GameSession.CurrentScore += pointsPerBlockDestoryed;
         FindObjectOfType<PowerUpHandler>().SpawnPowerUp(transform.position);
     }
 

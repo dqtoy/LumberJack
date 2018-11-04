@@ -17,12 +17,13 @@ public class LevelController : MonoBehaviour
     public void CountBreakableBlocks()
     {
         breakableBlocks++;
+        scoreText.UpdateScore(breakableBlocks);
     }
 
     public void DestoryedBreakableBlock()
     {
         breakableBlocks--;
-        scoreText.UpdateScore();
+        scoreText.UpdateScore(breakableBlocks);
         if (breakableBlocks <= 0)
         {
             LevelClear();
@@ -31,20 +32,32 @@ public class LevelController : MonoBehaviour
 
     private void LevelClear()
     {
-        FindObjectOfType<Ball>().FreezBall();
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (var ball in balls)
+        {
+            ball.FreezBall();
+        }
         gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
     }
 
     public void PauseMenu()
     {
         gameCanvas.GetComponent<Animator>().SetBool("isPaused", true);
-        FindObjectOfType<Ball>().FreezBall();
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (var ball in balls)
+        {
+            ball.FreezBall();
+        }
     }
 
     public void UnPauseMenu()
     {
         gameCanvas.GetComponent<Animator>().SetBool("isPaused", false);
-        FindObjectOfType<Ball>().UnFreezeBall();
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (var ball in balls)
+        {
+            ball.UnFreezeBall();
+        }
     }
 
 }

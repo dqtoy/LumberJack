@@ -9,11 +9,10 @@ public class ScoreUpdateText : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = GameSession.CurrentScore.ToString();
     }
 
-    public void UpdateScore()
+    public void UpdateScore(int bricksLeft)
     {
-        scoreText.text = GameSession.CurrentScore.ToString();
+        scoreText.text ="x" + bricksLeft.ToString();
     }
 }

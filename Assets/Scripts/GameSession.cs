@@ -9,7 +9,6 @@ public class GameSession : MonoBehaviour
     [Range(0, 2)] [SerializeField] float gameSpeed;
     [SerializeField] bool isAutoplayEnabled;
     [SerializeField] int lifes;
-    public static int CurrentScore { get; set; }
 
     private static GameSession gameSession = null;
     private void Awake()
@@ -61,7 +60,6 @@ public class GameSession : MonoBehaviour
 
     public void ResetGame()
     {
-        CurrentScore = 0;
         Destroy(gameObject);
     }
 
