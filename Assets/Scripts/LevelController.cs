@@ -5,9 +5,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
 
-    [SerializeField] int breakableBlocks;       // for debugging purposes
-
-    //cached reference
+    [SerializeField] int breakableBlocks;
     ScoreUpdateText scoreText;
     [SerializeField] GameObject gameCanvas;
 
@@ -16,7 +14,7 @@ public class LevelController : MonoBehaviour
         scoreText = FindObjectOfType<ScoreUpdateText>();
     }
 
-    public void CountBreakableBlocks()          // use this public function to automatyccly count block by calling method in Block.Start()
+    public void CountBreakableBlocks()
     {
         breakableBlocks++;
     }
@@ -25,7 +23,6 @@ public class LevelController : MonoBehaviour
     {
         breakableBlocks--;
         scoreText.UpdateScore();
-
         if (breakableBlocks <= 0)
         {
             LevelClear();

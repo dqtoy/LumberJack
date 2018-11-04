@@ -19,19 +19,10 @@ public class MusicContoller : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
         DontDestroyOnLoad(gameObject);
     }
-    // Use this for initialization
     void Start () {
         audioMixer.SetFloat("musicLevel", PlayerPreferenceController.GetMusicVolume());
         audioMixer.SetFloat("SFXLevel", PlayerPreferenceController.GetSFXVolume());
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-  
 }

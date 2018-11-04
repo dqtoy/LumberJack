@@ -10,17 +10,14 @@ public class OptionController : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
     [SerializeField] SceneLoader sceneLoader;
-
     [SerializeField] AudioMixer audioMixer;
 
-    // Use this for initialization
     void Start()
     {
         musicSlider.value = PlayerPreferenceController.GetMusicVolume();
         SFXSlider.value = PlayerPreferenceController.GetSFXVolume();
     }
 
-    // Update is called once per frame
     void Update()
     {
         audioMixer.SetFloat("musicLevel", musicSlider.value);
@@ -31,7 +28,6 @@ public class OptionController : MonoBehaviour
     {
         PlayerPreferenceController.SetMusicVolume(musicSlider.value);
         PlayerPreferenceController.SetSFXVolume(SFXSlider.value);
-
         sceneLoader.LoadMainMenu();
     }
 
@@ -39,9 +35,6 @@ public class OptionController : MonoBehaviour
     {
         PlayerPreferenceController.SetMusicVolume(musicSlider.value);
         PlayerPreferenceController.SetSFXVolume(SFXSlider.value);
-
         sceneLoader.BackToGamePlay();
     }
-
-
 }

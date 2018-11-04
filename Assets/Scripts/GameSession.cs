@@ -6,17 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    // configuration parameters
-    [Range(0, 2)] [SerializeField] float gameSpeed = 1f;
+    [Range(0, 2)] [SerializeField] float gameSpeed;
     [SerializeField] bool isAutoplayEnabled;
-
-    // state variable
+    [SerializeField] int lifes;
     public static int CurrentScore { get; set; }
 
-    [SerializeField] int lifes = 3;
-
     private static GameSession gameSession = null;
-
     private void Awake()
     {
         if (gameSession == null)
@@ -44,16 +39,12 @@ public class GameSession : MonoBehaviour
     public void ReduceLifePoint()
     {
         lifes--;
-
         if (lifes < 0)
         {
             GameOver();
             return;
         }
-
         FindObjectOfType<RemainsLifeDisplay>().UpdateLive(lifes);
-
-
     }
 
     public void AddLifePoint()
