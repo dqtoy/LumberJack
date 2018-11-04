@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-  
-
     GameSession gameSession;
-
-    
 
     public void LoadNextScene()
     {
@@ -62,7 +58,4 @@ public class SceneLoader : MonoBehaviour {
     {
         Application.Quit();
     }
-
-  
-
 }

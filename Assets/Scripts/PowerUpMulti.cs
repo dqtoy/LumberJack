@@ -86,7 +86,11 @@ public class PowerUpMulti : MonoBehaviour
 
     private void PlayEffects()
     {
-        if(VFXforPickUp == null) { return; }
+        if (VFXforPickUp == null)
+        {
+            Debug.LogWarning("No VFX to play!");
+            return;
+        }
         GameObject vfx = Instantiate(VFXforPickUp, transform.position, transform.rotation);
         Destroy(vfx, vfxLifeTime);
     }

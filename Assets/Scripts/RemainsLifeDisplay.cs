@@ -4,9 +4,7 @@ using UnityEngine;
 using TMPro;
 public class RemainsLifeDisplay : MonoBehaviour
 {
-
     TextMeshProUGUI liveText;
-
 
     void Start()
     {

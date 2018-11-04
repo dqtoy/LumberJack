@@ -27,6 +27,11 @@ public class PowerUpExplosion : MonoBehaviour
 
     private void PlayEffects()
     {
+        if (VFXforPickUp == null)
+        {
+            Debug.LogWarning("No VFX to play!");
+            return;
+        }
         GameObject vfx = Instantiate(VFXforPickUp, transform.position, transform.rotation);
         Destroy(vfx, vfxLifeTime);
     }

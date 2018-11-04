@@ -4,9 +4,7 @@ using UnityEngine;
 using TMPro;
 public class ScoreUpdateText : MonoBehaviour
 {
-
     TextMeshProUGUI scoreText;
-
 
     void Start()
     {
