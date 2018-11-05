@@ -502,7 +502,7 @@ Prefab:
     - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
         type: 2}
       propertyPath: powerUps.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4581253061356054, guid: 5f37a0be364f5604b9e338896a638d33, type: 2}
       propertyPath: m_LocalPosition.x
@@ -540,7 +540,7 @@ Prefab:
         type: 2}
       propertyPath: powerUps.Array.data[6]
       value: 
-      objectReference: {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736,
+      objectReference: {fileID: 1378942648397016, guid: 2aeb9737fc2cceb41976babf9d838a01,
         type: 2}
     - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
         type: 2}
