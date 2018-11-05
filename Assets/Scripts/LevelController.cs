@@ -23,10 +23,20 @@ public class LevelController : MonoBehaviour
     public void DestoryedBreakableBlock()
     {
         breakableBlocks--;
+        CheckBlocksInPlay();
         scoreText.UpdateScore(breakableBlocks);
         if (breakableBlocks <= 0)
         {
             LevelClear();
+        }
+    }
+
+    private void CheckBlocksInPlay()
+    {
+        Block[] blocks = FindObjectsOfType<Block>();
+        if (blocks.Length != breakableBlocks)
+        {
+            breakableBlocks = blocks.Length;
         }
     }
 

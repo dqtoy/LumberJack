@@ -47,10 +47,10 @@ public class Ball : MonoBehaviour
         {
             ballRigibody.velocity += minBallVelocity;
         }
-        else if (ballRigibody.velocity.magnitude > maxBallVelocity.magnitude)
-        {
-            ballRigibody.velocity -= minBallVelocity;
-        }
+        //else if (ballRigibody.velocity.magnitude > maxBallVelocity.magnitude)
+        //{
+        //    ballRigibody.velocity -= minBallVelocity;
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)

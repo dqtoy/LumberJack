@@ -1,10 +1,7 @@
-scena mapy z poziomami do odblokowania
+Ppzygotowa scrypt do odblokowywania poziomow i wiredUp ze scena
 Poprawiæ credits
-poprawic scene fina³ow¹
-poziomy
+poprawic scene game over
 nak³adka potwierdzajaca exit
-
-sprawdzic palete barw dla kazdego poziomu itp // dla mnie cacy....
 
 // rys fabularny po wersji testowej:
 

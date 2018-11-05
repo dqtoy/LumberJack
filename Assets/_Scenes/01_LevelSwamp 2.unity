@@ -536,7 +536,7 @@ Prefab:
         type: 2}
       propertyPath: powerUps.Array.data[6]
       value: 
-      objectReference: {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6,
+      objectReference: {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736,
         type: 2}
     - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
         type: 2}
@@ -728,7 +728,7 @@ Prefab:
         type: 2}
       propertyPath: powerUps.Array.data[5]
       value: 
-      objectReference: {fileID: 1378942648397016, guid: 75dfbc1175d4c1a499025d77707165c6,
+      objectReference: {fileID: 1378942648397016, guid: 181b1e75834da8749b3869e081e93736,
         type: 2}
     - target: {fileID: 114728635733554016, guid: 5f37a0be364f5604b9e338896a638d33,
         type: 2}
