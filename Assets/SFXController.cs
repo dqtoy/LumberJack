@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SFXController : MonoBehaviour {
+public class SFXController : MonoBehaviour
+{
 
     AudioSource sfxAudioSource;
     [SerializeField] AudioClip[] crackSound;
@@ -19,22 +20,19 @@ public class SFXController : MonoBehaviour {
     private static SFXController sFXController = null;
     private void Awake()
     {
-        if (sFXController == null)
-        {
-            sFXController = this;
-        }
-        else if (sFXController != this)
+        if (sFXController != null && sFXController != this)
         {
             DestroyImmediate(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            sFXController = this;
+            DontDestroyOnLoad(gameObject);
+            sfxAudioSource = GetComponent<AudioSource>();
+        }
     }
 
-    void Start () {
-        sfxAudioSource = GetComponent<AudioSource>();
-	}
-	
-	public void PlaySFX(Collision2D collider)
+    public void PlaySFX(Collision2D collider)
     {
         if (collider.gameObject.tag == "Brick")
         {

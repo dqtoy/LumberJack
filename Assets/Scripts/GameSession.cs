@@ -13,16 +13,15 @@ public class GameSession : MonoBehaviour
     private static GameSession gameSession = null;
     private void Awake()
     {
-        if (gameSession == null)
-        {
-            gameSession = this;
-        }
-        else if (gameSession != this)
+        if (gameSession != null && gameSession != this)
         {
             DestroyImmediate(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            gameSession = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     void Update()
@@ -38,10 +37,9 @@ public class GameSession : MonoBehaviour
     public void ReduceLifePoint()
     {
         lifes--;
-        if (lifes < 0)
+        if (lifes <= 0)
         {
             GameOver();
-            return;
         }
         FindObjectOfType<RemainsLifeDisplay>().UpdateLive(lifes);
     }

@@ -2,7 +2,8 @@ scena mapy z poziomami do odblokowania
 Poprawiæ credits
 poprawic scene fina³ow¹
 poziomy
-sprawdzic palete barw dla kazdego poziomu itp
+
+sprawdzic palete barw dla kazdego poziomu itp // dla mnie cacy....
 
 // rys fabularny po wersji testowej:
 

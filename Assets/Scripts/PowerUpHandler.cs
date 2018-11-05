@@ -28,7 +28,7 @@ public class PowerUpHandler : MonoBehaviour
 
     public void SpawnPowerUp(Vector3 position)
     {
-        int chance = UnityEngine.Random.Range(0, 11);
+        int chance = UnityEngine.Random.Range(0, 10);
         int index = UnityEngine.Random.Range(0, powerUps.Length);
         if (chance >= tresholdForPowerUpSpawn)
         {
