@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -48,6 +49,17 @@ public class LevelController : MonoBehaviour
             ball.FreezBall();
         }
         gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
+        IfWinUnlockNextLevel();
+    }
+
+    private void IfWinUnlockNextLevel()
+    {
+        int numberOfCurrentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (numberOfCurrentLevel < SceneManager.sceneCountInBuildSettings - 1)
+        {
+            int nextLevel = numberOfCurrentLevel + 1;
+            PlayerPreferenceController.UnlockLevelNumber(nextLevel);
+        }
     }
 
     public void PauseMenu()

@@ -54,6 +54,11 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene("00_Credits");
     }
 
+    public void LoadMap()
+    {
+        SceneManager.LoadScene("00_LevelMap");
+    }
+
     public void LaunchFacebook()
     {
         Application.OpenURL("https://www.facebook.com/LongEarDevelopment/");
