@@ -1,8 +1,6 @@
-Przygotowa scrypt do odblokowywania poziomow i wiredUp ze scena
 Dodaæ splashScreen LongEar
 Poprawiæ credits
 gameover dodac kanapke jak bedzie gotowa
-nak³adka potwierdzajaca exit // moze
 Orze³ do gry
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class OptionController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class OptionController : MonoBehaviour
     [SerializeField] Slider SFXSlider;
     [SerializeField] SceneLoader sceneLoader;
     [SerializeField] AudioMixer audioMixer;
+    [SerializeField] int sceneBuildOffsetToLock;
 
     void Start()
     {
@@ -36,5 +38,13 @@ public class OptionController : MonoBehaviour
         PlayerPreferenceController.SetMusicVolume(musicSlider.value);
         PlayerPreferenceController.SetSFXVolume(SFXSlider.value);
         sceneLoader.BackToGamePlay();
+    }
+
+    public void LockAllLevelsExludeOne()
+    {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings -1; i++)
+        {
+            PlayerPreferenceController.LockLeverNumber(i + sceneBuildOffsetToLock);
+        }
     }
 }
