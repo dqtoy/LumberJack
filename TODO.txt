@@ -2,6 +2,7 @@ scena mapy z poziomami do odblokowania
 Poprawiæ credits
 poprawic scene fina³ow¹
 poziomy
+nak³adka potwierdzajaca exit
 
 sprawdzic palete barw dla kazdego poziomu itp // dla mnie cacy....
 
