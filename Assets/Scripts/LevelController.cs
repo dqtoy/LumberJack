@@ -21,6 +21,23 @@ public class LevelController : MonoBehaviour
         scoreText.UpdateScore(breakableBlocks);
     }
 
+    public void EagleInPlay(int eagleLifes)
+    {
+        breakableBlocks += eagleLifes;
+        scoreText.UpdateScore(breakableBlocks);
+    }
+    
+    public void EagleHit()
+    {
+        breakableBlocks--;
+        if (breakableBlocks <= 0)
+        {
+            LevelClear();
+            return;
+        }
+        scoreText.UpdateScore(breakableBlocks);
+    }
+
     public void DestoryedBreakableBlock()
     {
         breakableBlocks--;

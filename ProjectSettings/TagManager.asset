@@ -11,6 +11,8 @@ TagManager:
   - LoseCollider
   - StartButton
   - GameCanvas
+  - BoundryLeft
+  - BoundryRight
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Eagle
+  - EagleBoundry
   - 
   - 
   - 
