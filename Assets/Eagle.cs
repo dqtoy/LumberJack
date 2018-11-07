@@ -7,20 +7,37 @@ public class Eagle : MonoBehaviour
 
     Rigidbody2D _eagleRigidbody;
     LevelController _levelController;
+    [SerializeField] Animator _eagleBodyAnimator;
+    [SerializeField] Animator _gameObjectAnimator;
     [SerializeField] Vector2 _speed;
     [SerializeField] int _eagleLifes;
+    [SerializeField] bool _isEagleDead = false;
 
-    // Use this for initialization
+    public void SetEagleState(bool state)
+    {
+        _isEagleDead = state;
+    }
+
     void Start()
     {
         _eagleRigidbody = GetComponent<Rigidbody2D>();
         _levelController = FindObjectOfType<LevelController>();
         _levelController.EagleInPlay(_eagleLifes);
-        //_eagleRigidbody.AddForce(_speed);
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        if (!_isEagleDead)
+        {
+            KeepSpeedOfEagle();
+        }
+        else
+        {
+            _eagleRigidbody.velocity = Vector2.zero;
+        }
+    }
+
+    private void KeepSpeedOfEagle()
     {
         if (_eagleRigidbody.velocity.magnitude < _speed.magnitude)
         {
@@ -33,8 +50,20 @@ public class Eagle : MonoBehaviour
         FlipEagle();
         if (collision.gameObject.CompareTag("Ball"))
         {
-            _levelController.EagleHit();
+            ProcessHitByBall();
+            ProcessEffectsOfHIt();
         }
+    }
+
+    private void ProcessEffectsOfHIt()
+    {
+        FindObjectOfType<SFXController>().PlayHitEagle();
+        _eagleBodyAnimator.SetTrigger("EagleHit");
+    }
+
+    private void ProcessHitByBall()
+    {
+        _levelController.EagleHit();
     }
 
     private void FlipEagle()
@@ -47,5 +76,21 @@ public class Eagle : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+
+    public void PlayDeathEagleAnimation()
+    {
+        _gameObjectAnimator.SetTrigger("RunOutOfLife");
+    }
+
+    public void EagleFreez()
+    {
+        _eagleRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+
+    public void EagleUnfreez()
+    {
+        _eagleRigidbody.constraints = RigidbodyConstraints2D.None;
+        _eagleRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SplashScreen : MonoBehaviour {
+
+    [SerializeField] float timeOfSplash;
+
+	void Start ()
+    {
+        Invoke("LoadMainMenu", timeOfSplash);
+    }
+
+    private void LoadMainMenu()
+    {
+        SceneManager.LoadScene("00_MainMenu");
+    }
+
+    void Update () {
+		
+	}
+}

@@ -16,6 +16,8 @@ public class SFXController : MonoBehaviour
     [Range(0, 1)] [SerializeField] float stoneVolume;
     [SerializeField] AudioClip chainsawSound;
     [Range(0, 1)] [SerializeField] float chainsawVolume;
+    [SerializeField] AudioClip eagle;
+    [Range(0, 1)] [SerializeField] float eagleVolume;
 
     private static SFXController sFXController = null;
     private void Awake()
@@ -57,5 +59,10 @@ public class SFXController : MonoBehaviour
     public void PlayDestroyBlock()
     {
         sfxAudioSource.PlayOneShot(blockDestory, destoryVolume);
+    }
+
+    public void PlayHitEagle()
+    {
+        sfxAudioSource.PlayOneShot(eagle, eagleVolume);
     }
 }

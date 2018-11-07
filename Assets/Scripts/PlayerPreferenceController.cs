@@ -9,6 +9,7 @@ public class PlayerPreferenceController : MonoBehaviour
     const string MUSIC_VOLUME_KEY = "music_volume";
     const string SFX_VOLUME_KEY = "SFX_volume";
     const string LEVEL_KEY = "level_number_";
+    const string INTRO_PANEL = "intro_panel_status";
 
     public static void SetMusicVolume(float volume)
     {
@@ -44,6 +45,29 @@ public class PlayerPreferenceController : MonoBehaviour
         return PlayerPrefs.GetFloat(SFX_VOLUME_KEY);
     }
 
+    public static void TurnIntroOFF()
+    {
+        PlayerPrefs.SetInt(INTRO_PANEL, 0);
+    }
+
+    public static void TurnIntroON()
+    {
+        PlayerPrefs.SetInt(INTRO_PANEL, 1);
+    }
+
+    public static bool IsIntroPanelsOn()
+    {
+        int introPanelsValue = PlayerPrefs.GetInt(INTRO_PANEL);
+        if (introPanelsValue == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public static void LockLeverNumber(int levelNumber)
     {
         if (levelNumber <= SceneManager.sceneCountInBuildSettings - 1)
@@ -73,10 +97,11 @@ public class PlayerPreferenceController : MonoBehaviour
     public static bool IsLevelWithThisNumberUnlocked(int levelNumber)
     {
         int storedLevelValue = PlayerPrefs.GetInt(LEVEL_KEY + levelNumber.ToString());
-        if(storedLevelValue == 1)
+        if (storedLevelValue == 1)
         {
             return true;
-        } else
+        }
+        else
         {
             return false;
         }

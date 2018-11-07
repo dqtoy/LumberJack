@@ -1,9 +1,13 @@
-Dodaæ splashScreen LongEar
-Poprawiæ credits
-gameover dodac kanapke jak bedzie gotowa
-Orze³ do gry
-Icona do gry i grafika na GooglePLay
-Zrobiæ animacje do or³a jak jest trafiony i spadaj¹cej kanapki na koniec!!!!!!!
+
+grafika na GooglePLay
+przygotowaæ intro na mainMenu
+
+bugs:
+sprawdziæ przed buildem opcje
+
+
+
+
 
 // rys fabularny po wersji testowej:
 

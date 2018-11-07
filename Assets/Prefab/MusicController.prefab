@@ -53,7 +53,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: f26fe0500f27a29468e8b980618722ba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -149,3 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: ec775c5a9cfde8b49b9191e60eaf8c78, type: 2}
+  _forestMusic: {fileID: 8300000, guid: f26fe0500f27a29468e8b980618722ba, type: 3}
+  _forestMusicVolume: 0.8
+  _swampMusic: {fileID: 8300000, guid: 92ce7ba0cdab9414f8136d4be4c43895, type: 3}
+  _swampMusicVolume: 1
+  _mountainMusic: {fileID: 8300000, guid: 78262ae02efae82408cc504b84151902, type: 3}
+  _mountianMusicVolume: 0.8
+  _eagleMusic: {fileID: 8300000, guid: 8240afeb425864c4a80ce8a985a05105, type: 3}
+  _eagleMusicVolume: 0.8

@@ -13,11 +13,13 @@ public class OptionController : MonoBehaviour
     [SerializeField] SceneLoader sceneLoader;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] int sceneBuildOffsetToLock;
+    [SerializeField] Toggle DontShowIntro;
 
     void Start()
     {
         musicSlider.value = PlayerPreferenceController.GetMusicVolume();
         SFXSlider.value = PlayerPreferenceController.GetSFXVolume();
+        DontShowIntro.isOn = !PlayerPreferenceController.IsIntroPanelsOn();
     }
 
     void Update()
@@ -45,6 +47,21 @@ public class OptionController : MonoBehaviour
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings -1; i++)
         {
             PlayerPreferenceController.LockLeverNumber(i + sceneBuildOffsetToLock);
+        }
+        PlayerPreferenceController.UnlockLevelNumber(1);
+    }
+
+    public void IntroONOFF(bool value)
+    {
+        if (value)
+        {
+            PlayerPreferenceController.TurnIntroOFF();
+            Debug.Log(PlayerPreferenceController.IsIntroPanelsOn());
+        }
+        else
+        {
+            PlayerPreferenceController.TurnIntroON();
+            Debug.Log(PlayerPreferenceController.IsIntroPanelsOn());
         }
     }
 }

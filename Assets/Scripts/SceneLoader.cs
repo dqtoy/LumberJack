@@ -10,12 +10,14 @@ public class SceneLoader : MonoBehaviour {
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        FindObjectOfType<MusicContoller>().SwitchMusicForLevels(currentSceneIndex + 1);
         SceneManager.LoadScene(currentSceneIndex + 1);
         
     }
 
     public void LoadSceneOfIndex(int sceneIndex)
     {
+        FindObjectOfType<MusicContoller>().SwitchMusicForLevels(sceneIndex);
         SceneManager.LoadScene(sceneIndex);
     }
 

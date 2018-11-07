@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] int breakableBlocks;
     ScoreUpdateText scoreText;
     [SerializeField] GameObject gameCanvas;
+    [SerializeField] float timeToWaitAfterEagleDeath;
 
     private void Start()
     {
@@ -26,13 +27,16 @@ public class LevelController : MonoBehaviour
         breakableBlocks += eagleLifes;
         scoreText.UpdateScore(breakableBlocks);
     }
-    
+
     public void EagleHit()
     {
         breakableBlocks--;
         if (breakableBlocks <= 0)
         {
-            LevelClear();
+            FindAllBallsAndFreezThem();
+            FindObjectOfType<Eagle>().SetEagleState(true);
+            FindObjectOfType<Eagle>().PlayDeathEagleAnimation();
+            Invoke("LevelClear", timeToWaitAfterEagleDeath);
             return;
         }
         scoreText.UpdateScore(breakableBlocks);
@@ -60,11 +64,7 @@ public class LevelController : MonoBehaviour
 
     private void LevelClear()
     {
-        Ball[] balls = FindObjectsOfType<Ball>();
-        foreach (var ball in balls)
-        {
-            ball.FreezBall();
-        }
+        FindAllBallsAndFreezThem();
         gameCanvas.GetComponent<Animator>().SetTrigger("stageClear");
         IfWinUnlockNextLevel();
     }
@@ -82,6 +82,25 @@ public class LevelController : MonoBehaviour
     public void PauseMenu()
     {
         gameCanvas.GetComponent<Animator>().SetBool("isPaused", true);
+        FindAllBallsAndFreezThem();
+        if(FindObjectOfType<Eagle>() != null)
+        {
+            FindObjectOfType<Eagle>().EagleFreez();
+        }
+    }
+
+    public void UnPauseMenu()
+    {
+        gameCanvas.GetComponent<Animator>().SetBool("isPaused", false);
+        FindAllBallsAndUnfreezThem();
+        if (FindObjectOfType<Eagle>() != null)
+        {
+            FindObjectOfType<Eagle>().EagleUnfreez();
+        }
+    }
+
+    private static void FindAllBallsAndFreezThem()
+    {
         Ball[] balls = FindObjectsOfType<Ball>();
         foreach (var ball in balls)
         {
@@ -89,14 +108,12 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void UnPauseMenu()
+    private static void FindAllBallsAndUnfreezThem()
     {
-        gameCanvas.GetComponent<Animator>().SetBool("isPaused", false);
         Ball[] balls = FindObjectsOfType<Ball>();
         foreach (var ball in balls)
         {
             ball.UnFreezeBall();
         }
     }
-
 }

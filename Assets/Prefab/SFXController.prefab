@@ -161,3 +161,5 @@ MonoBehaviour:
   stoneVolume: 0.3
   chainsawSound: {fileID: 8300000, guid: 1b31b8b624631954993c5b9f4395b80f, type: 3}
   chainsawVolume: 0.5
+  eagle: {fileID: 8300000, guid: 06ae1b974de7cd8419f40bb5d00d0e1e, type: 3}
+  eagleVolume: 1
